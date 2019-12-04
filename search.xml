@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>WAF绕过安全狗绕过</title>
+    <url>/2019/12/04/WAF%E7%BB%95%E8%BF%87%E5%AE%89%E5%85%A8%E7%8B%97%E7%BB%95%E8%BF%87/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>About CORScanner</title>
     <url>/2019/12/04/About%20CORScanner/</url>
     <content><![CDATA[<h2 id="About-CORScanner"><a href="#About-CORScanner" class="headerlink" title="About CORScanner"></a>About CORScanner</h2><p>CORScanner是一个python工具，旨在发现网站的CORS错误配置漏洞。它可以帮助网站管理员和渗透测试人员检查他们针对的域/ URL是否具有不安全的CORS策略。</p>
