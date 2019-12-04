@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>hello-world</title>
+    <url>/2019/12/04/hello-world-1/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>睡觉</category>
+      </categories>
+      <tags>
+        <tag>吃饭</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>About CORScanner</title>
     <url>/2019/12/04/About%20CORScanner/</url>
     <content><![CDATA[<h2 id="About-CORScanner"><a href="#About-CORScanner" class="headerlink" title="About CORScanner"></a>About CORScanner</h2><p>CORScanner是一个python工具，旨在发现网站的CORS错误配置漏洞。它可以帮助网站管理员和渗透测试人员检查他们针对的域/ URL是否具有不安全的CORS策略。</p>
@@ -155,20 +166,6 @@
         <tag>CORS</tag>
         <tag>burp</tag>
         <tag>渗透</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hello-world</title>
-    <url>/2019/12/04/hello-world-1/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>分类1</category>
-        <category>分类2</category>
-      </categories>
-      <tags>
-        <tag>标签1</tag>
-        <tag>标签2</tag>
-        <tag>标签3</tag>
       </tags>
   </entry>
   <entry>
