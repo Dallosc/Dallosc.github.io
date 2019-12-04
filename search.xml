@@ -16,11 +16,6 @@
       </tags>
   </entry>
   <entry>
-    <title>hello-world</title>
-    <url>/2019/12/04/hello-world/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>CORScanner</title>
     <url>/2019/12/04/CORScanner/</url>
     <content><![CDATA[<h2 id="About-CORScanner"><a href="#About-CORScanner" class="headerlink" title="About CORScanner"></a>About CORScanner</h2><p>CORScanner是一个python工具，旨在发现网站的CORS错误配置漏洞。它可以帮助网站管理员和渗透测试人员检查他们针对的域/ URL是否具有不安全的CORS策略。</p>
@@ -171,8 +166,8 @@
         <category>吃饭</category>
       </categories>
       <tags>
-        <tag>burp</tag>
         <tag>渗透</tag>
+        <tag>burp</tag>
       </tags>
   </entry>
   <entry>
@@ -233,5 +228,10 @@ public class Handler : IHttpHandler {
         <tag>安全狗</tag>
         <tag>WAF</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>hello-world</title>
+    <url>/2019/12/04/hello-world/</url>
+    <content><![CDATA[]]></content>
   </entry>
 </search>
