@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>XSS脚本实验室1</title>
+    <url>/2019/12/10/XSS%E8%84%9A%E6%9C%AC%E5%AE%9E%E9%AA%8C%E5%AE%A41/</url>
+    <content><![CDATA[<p><img src="http://q20wi1s2d.bkt.clouddn.com/结果脚本XSS.png" alt="结果XSS脚本"></p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/目标XSS脚本.png" alt="目标XSS脚本"></p>
+<p>将以下内容复制并粘贴到搜索框中：<script> alert（1）&lt;/ script&gt;</p>
+]]></content>
+      <categories>
+        <category>渗透</category>
+      </categories>
+      <tags>
+        <tag>渗透</tag>
+        <tag>XSS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>hydra的使用</title>
     <url>/2019/12/09/hydra%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<p>我个人喜欢C/S架构破解的时候使用hydra，搭配nmap和sqlmap；</p>
