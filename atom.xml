@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-12-10T13:16:20.066Z</updated>
+  <updated>2019-12-10T13:17:49.780Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>WebSocket实验室1</title>
+    <link href="http://yoursite.com/2019/12/10/WebSocket%E5%AE%9E%E9%AA%8C%E5%AE%A41/"/>
+    <id>http://yoursite.com/2019/12/10/WebSocket%E5%AE%9E%E9%AA%8C%E5%AE%A41/</id>
+    <published>2019-12-10T12:59:12.000Z</published>
+    <updated>2019-12-10T13:17:49.780Z</updated>
+    
+    <content type="html"><![CDATA[<p>目标</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/webSocket目标.png" alt="目标"></p><p>用了  xss</p><p>在burp中进行修改</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/webSocket用burp 修改进行攻击.png" alt="如何攻击"></p><p><img src=1 onerror='alert(1)'></p><p>最终结果 如图</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/webSocket成功结果.png" alt="最终结果"></p><p>总的来说就是对留言版进行渗透</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;目标&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://q20wi1s2d.bkt.clouddn.com/webSocket目标.png&quot; alt=&quot;目标&quot;&gt;&lt;/p&gt;
+&lt;p&gt;用了  xss&lt;/p&gt;
+&lt;p&gt;在burp中进行修改&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://
+      
+    
+    </summary>
+    
+    
+      <category term="渗透" scheme="http://yoursite.com/categories/%E6%B8%97%E9%80%8F/"/>
+    
+    
+      <category term="渗透" scheme="http://yoursite.com/tags/%E6%B8%97%E9%80%8F/"/>
+    
+      <category term="WebSocket" scheme="http://yoursite.com/tags/WebSocket/"/>
+    
+  </entry>
   
   <entry>
     <title>XSS脚本实验室1</title>
@@ -268,9 +300,9 @@
       <category term="吃饭" scheme="http://yoursite.com/categories/%E5%90%83%E9%A5%AD/"/>
     
     
-      <category term="渗透" scheme="http://yoursite.com/tags/%E6%B8%97%E9%80%8F/"/>
-    
       <category term="burp" scheme="http://yoursite.com/tags/burp/"/>
+    
+      <category term="渗透" scheme="http://yoursite.com/tags/%E6%B8%97%E9%80%8F/"/>
     
   </entry>
   
