@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-12-10T13:17:49.780Z</updated>
+  <updated>2019-12-10T13:22:10.165Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://yoursite.com/2019/12/10/WebSocket%E5%AE%9E%E9%AA%8C%E5%AE%A41/"/>
     <id>http://yoursite.com/2019/12/10/WebSocket%E5%AE%9E%E9%AA%8C%E5%AE%A41/</id>
     <published>2019-12-10T12:59:12.000Z</published>
-    <updated>2019-12-10T13:17:49.780Z</updated>
+    <updated>2019-12-10T13:22:10.165Z</updated>
     
-    <content type="html"><![CDATA[<p>目标</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/webSocket目标.png" alt="目标"></p><p>用了  xss</p><p>在burp中进行修改</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/webSocket用burp 修改进行攻击.png" alt="如何攻击"></p><p><img src=1 onerror='alert(1)'></p><p>最终结果 如图</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/webSocket成功结果.png" alt="最终结果"></p><p>总的来说就是对留言版进行渗透</p>]]></content>
+    <content type="html"><![CDATA[<p>目标</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/webSocket目标.png" alt="目标"></p><p>用了  xss</p><p>在burp中进行修改</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/webSocket用burp 修改进行攻击.png" alt="如何攻击"></p><p>最终结果 如图</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/webSocket成功结果.png" alt="最终结果"></p><p>总的来说就是对留言版进行渗透</p>]]></content>
     
     <summary type="html">
     
@@ -53,9 +53,9 @@
     <link href="http://yoursite.com/2019/12/10/XSS%E8%84%9A%E6%9C%AC%E5%AE%9E%E9%AA%8C%E5%AE%A41/"/>
     <id>http://yoursite.com/2019/12/10/XSS%E8%84%9A%E6%9C%AC%E5%AE%9E%E9%AA%8C%E5%AE%A41/</id>
     <published>2019-12-10T08:59:03.000Z</published>
-    <updated>2019-12-10T13:16:20.066Z</updated>
+    <updated>2019-12-10T13:21:34.891Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="http://q20wi1s2d.bkt.clouddn.com/结果脚本XSS.png" alt="结果XSS脚本"></p><p><img src="http://q20wi1s2d.bkt.clouddn.com/目标XSS脚本.png" alt="目标XSS脚本"></p><p>将以下内容复制并粘贴到搜索框中：<script> alert（1）&lt;/ script&gt;</p>]]></content>
+    <content type="html"><![CDATA[<p><img src="http://q20wi1s2d.bkt.clouddn.com/结果脚本XSS.png" alt="结果XSS脚本"></p><p><img src="http://q20wi1s2d.bkt.clouddn.com/目标XSS脚本.png" alt="目标XSS脚本"></p>]]></content>
     
     <summary type="html">
     
