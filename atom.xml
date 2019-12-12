@@ -326,9 +326,9 @@
       <category term="吃饭" scheme="http://yoursite.com/categories/%E5%90%83%E9%A5%AD/"/>
     
     
-      <category term="渗透" scheme="http://yoursite.com/tags/%E6%B8%97%E9%80%8F/"/>
-    
       <category term="burp" scheme="http://yoursite.com/tags/burp/"/>
+    
+      <category term="渗透" scheme="http://yoursite.com/tags/%E6%B8%97%E9%80%8F/"/>
     
   </entry>
   
