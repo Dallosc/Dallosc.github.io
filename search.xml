@@ -1,6 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>一段时间总结</title>
+    <url>/2019/12/12/%E4%B8%80%E6%AE%B5%E6%97%B6%E9%97%B4%E6%80%BB%E7%BB%93/</url>
+    <content><![CDATA[<h3 id="CORS"><a href="#CORS" class="headerlink" title="CORS"></a>CORS</h3><p>我感觉这个东西 实现挺简单的，主要是对一个origin的进行改变，使自己出现在Access-Control-Allow-Origin标头中，获取到对这个网站的访问权</p>
+<p>还有关于那个空白名单的Origin</p>
+<h3 id="UI劫持"><a href="#UI劫持" class="headerlink" title="UI劫持"></a>UI劫持</h3><p>就是对你进行欺骗，提供一个诱饵网站   比如点击抽奖，   真实的是点上了另一个网站的某个按钮，可以是付款之类的等等，就是应该多个页面覆盖的</p>
+<p>诱饵主要靠电子邮件发出去的</p>
+<h3 id="WebSocketes漏洞"><a href="#WebSocketes漏洞" class="headerlink" title="WebSocketes漏洞"></a>WebSocketes漏洞</h3><p>这个  还是bp工具好用</p>
+<p>留言板之类的 比如留言板 可以进行XSS渗透，</p>
+<p>‘</p>
+<p><script> alert (1)</script><br>‘</p>
+<p>就是你打了一个&lt;    结果可以输入  网站也接受   ，但是拦截的信息 来看   &lt;  变成了一个$#  。然后就想到一个方法 拦截修改  然后发送过去   可以很多类型的WEB安全漏洞</p>
+<h3 id="流量夹带攻击-http-ReQUEST-sMUGGLING"><a href="#流量夹带攻击-http-ReQUEST-sMUGGLING" class="headerlink" title="流量夹带攻击 http ReQUEST sMUGGLING"></a>流量夹带攻击 http ReQUEST sMUGGLING</h3><p>干扰网站 ，让他处理一个或多个用户接受的HTTP请求序列的技术。这个漏洞是这个网站因为里面有一个负载均衡的服务器，负载均衡徽对一个请求 来转发，，但是这个时候出现了一个模糊的请求，前端和后端的系统对这个界限不清，就会出现俩边请求对他进行不同的解析处理 。然后就夹带了攻击，造成了安全隐患。</p>
+<h3 id="SQL注入"><a href="#SQL注入" class="headerlink" title="SQL注入"></a>SQL注入</h3><p>这个有很多种注入</p>
+<p>1 显示里面隐藏的信息</p>
+<p>2 颠覆里面的逻辑</p>
+<p>3 UNION   查询隔壁的数据表</p>
+<p>4 得知他用了 什么数据库  然后寻找相应的漏洞</p>
+<p>5 盲注  用工具来实现</p>
+<p>难一点的就是使用二阶SQL注入</p>
+<h3 id="XSS"><a href="#XSS" class="headerlink" title="XSS"></a>XSS</h3><p>规避攻击者相同的源策略，该策略将不同的网站彼此隔离，然后控制受害用户访问那个应用程序的功能和数据。</p>
+<p>放映的XSS</p>
+<p>存储的XSS</p>
+<p>基于DOM 的XSS</p>
+<p>可以进行的操作 ：</p>
+<p>将木马注入网站之中</p>
+<p>捕获用户的数据</p>
+<p>修改网站</p>
+<p>假扮用户</p>
+<h3 id="CSRF跨站点伪造请求"><a href="#CSRF跨站点伪造请求" class="headerlink" title="CSRF跨站点伪造请求"></a>CSRF跨站点伪造请求</h3><p>CSRF是一个    使攻击者执行他们不打算执行的操作，手感染后主要做的使更改电子邮件地址啊   更改密码之类的。</p>
+<p>这个需要三个必要条件</p>
+<p>相关动作</p>
+<p>基于cookie 的会话处理</p>
+<p>没有不可预测的请求参数</p>
+]]></content>
+      <categories>
+        <category>总结</category>
+      </categories>
+      <tags>
+        <tag>总结</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>WebSocket实验室1</title>
     <url>/2019/12/10/WebSocket%E5%AE%9E%E9%AA%8C%E5%AE%A41/</url>
     <content><![CDATA[<p>目标</p>
@@ -328,8 +370,8 @@
         <category>吃饭</category>
       </categories>
       <tags>
-        <tag>burp</tag>
         <tag>渗透</tag>
+        <tag>burp</tag>
       </tags>
   </entry>
   <entry>
