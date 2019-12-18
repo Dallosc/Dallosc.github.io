@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>SQL注入第三题</title>
+    <url>/2019/12/18/SQL%E6%B3%A8%E5%85%A5%E7%AC%AC%E4%B8%89%E9%A2%98/</url>
+    <content><![CDATA[<h3 id="SQL注入第三题"><a href="#SQL注入第三题" class="headerlink" title="SQL注入第三题"></a>SQL注入第三题</h3><p>错误注入 返回的</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/SQL注入 第三题1.png" alt="结果"></p>
+]]></content>
+      <categories>
+        <category>渗透</category>
+      </categories>
+      <tags>
+        <tag>渗透</tag>
+        <tag>SQL注入</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>靶机第二题</title>
     <url>/2019/12/17/%E9%9D%B6%E6%9C%BA%E7%AC%AC%E4%BA%8C%E9%A2%98/</url>
     <content><![CDATA[<h3 id="靶机第二题-SQL注入-当网站参数防注入"><a href="#靶机第二题-SQL注入-当网站参数防注入" class="headerlink" title="靶机第二题 SQL注入 当网站参数防注入"></a>靶机第二题 SQL注入 当网站参数防注入</h3><p>这个是我们的目标</p>
