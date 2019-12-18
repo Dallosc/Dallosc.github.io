@@ -46,21 +46,30 @@
   };
 </script>
 
-  <meta name="description" content="SQL注入第二题根据题意 可以知道  这个是万能钥匙题   username&#x3D;admin&amp;#39; or &amp;#39;1&amp;#39;&#x3D;&amp;#39;1&amp;amp;password&#x3D;&amp;#39;or 1&#x3D;1#&amp;amp;login&#x3D;Login">
+  <meta name="description" content="靶机第二题 SQL注入 当网站参数防注入这个是我们的目标  先用御剑随便扫扫  随便点点  注入看看  发现 没有对order 进行限制     order   by 经过  处理发现 这个字段有10个 因为对一些参数进行了限制 ，所以选择另一款软件进行测试  id&#x3D;171+union+select+1,username,password,4,5,6,7,8,9,10+from+admin  把里">
 <meta name="keywords" content="渗透,SQL注入">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SQL注入第二题">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;15&#x2F;SQL%E6%B3%A8%E5%85%A5%E7%AC%AC%E4%BA%8C%E9%A2%98&#x2F;index.html">
+<meta property="og:title" content="靶机第二题">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;17&#x2F;%E9%9D%B6%E6%9C%BA%E7%AC%AC%E4%BA%8C%E9%A2%98&#x2F;index.html">
 <meta property="og:site_name" content="Dallosc">
-<meta property="og:description" content="SQL注入第二题根据题意 可以知道  这个是万能钥匙题   username&#x3D;admin&amp;#39; or &amp;#39;1&amp;#39;&#x3D;&amp;#39;1&amp;amp;password&#x3D;&amp;#39;or 1&#x3D;1#&amp;amp;login&#x3D;Login">
+<meta property="og:description" content="靶机第二题 SQL注入 当网站参数防注入这个是我们的目标  先用御剑随便扫扫  随便点点  注入看看  发现 没有对order 进行限制     order   by 经过  处理发现 这个字段有10个 因为对一些参数进行了限制 ，所以选择另一款软件进行测试  id&#x3D;171+union+select+1,username,password,4,5,6,7,8,9,10+from+admin  把里">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;SQL注入 第二题1.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;SQL注入 第二题2.png">
-<meta property="og:updated_time" content="2019-12-17T07:48:49.502Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;靶机第二题 扫描.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;靶机第二题 扫描处理结果.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;靶机第二题 发现SQL注入漏洞.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;靶机第二题 发现对一些SQL参数.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;靶机第二题 确定字段数 10.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;靶机第二题 确定字段数 11.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;靶机第二题 说明2,3,7,8,9表名.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;靶机第二题 得到username和password.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;靶机第二题 解密加密.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;靶机第二题 后台管理界面.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;靶机第二题 flag.png">
+<meta property="og:updated_time" content="2019-12-18T08:39:17.804Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;SQL注入 第二题1.png">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;靶机第二题 扫描.png">
 
-<link rel="canonical" href="http://yoursite.com/2019/12/15/SQL%E6%B3%A8%E5%85%A5%E7%AC%AC%E4%BA%8C%E9%A2%98/">
+<link rel="canonical" href="http://yoursite.com/2019/12/17/%E9%9D%B6%E6%9C%BA%E7%AC%AC%E4%BA%8C%E9%A2%98/">
 
 
 <script id="page-configurations">
@@ -74,7 +83,7 @@
   };
 </script>
 
-  <title>SQL注入第二题 | Dallosc</title>
+  <title>靶机第二题 | Dallosc</title>
   
 
 
@@ -213,7 +222,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/15/SQL%E6%B3%A8%E5%85%A5%E7%AC%AC%E4%BA%8C%E9%A2%98/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/17/%E9%9D%B6%E6%9C%BA%E7%AC%AC%E4%BA%8C%E9%A2%98/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -226,7 +235,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          SQL注入第二题
+          靶机第二题
         </h1>
 
         <div class="post-meta">
@@ -236,14 +245,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-12-15 15:27:47" itemprop="dateCreated datePublished" datetime="2019-12-15T15:27:47+08:00">2019-12-15</time>
+              <time title="创建时间：2019-12-17 16:21:05" itemprop="dateCreated datePublished" datetime="2019-12-17T16:21:05+08:00">2019-12-17</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-17 15:48:49" itemprop="dateModified" datetime="2019-12-17T15:48:49+08:00">2019-12-17</time>
+                <time title="修改时间：2019-12-18 16:39:17" itemprop="dateModified" datetime="2019-12-18T16:39:17+08:00">2019-12-18</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -268,10 +277,29 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="SQL注入第二题"><a href="#SQL注入第二题" class="headerlink" title="SQL注入第二题"></a>SQL注入第二题</h3><p>根据题意 可以知道  这个是万能钥匙题</p>
-<p><img src="http://q20wi1s2d.bkt.clouddn.com/SQL注入 第二题1.png" alt="根据题意"></p>
-<p><img src="http://q20wi1s2d.bkt.clouddn.com/SQL注入 第二题2.png" alt="结果返回"></p>
-<p><code>username=admin&#39; or &#39;1&#39;=&#39;1&amp;password=&#39;or 1=1#&amp;login=Login</code></p>
+        <h3 id="靶机第二题-SQL注入-当网站参数防注入"><a href="#靶机第二题-SQL注入-当网站参数防注入" class="headerlink" title="靶机第二题 SQL注入 当网站参数防注入"></a>靶机第二题 SQL注入 当网站参数防注入</h3><p>这个是我们的目标</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/靶机第二题 扫描.png" alt="这个是我们要渗透的网站"></p>
+<p>先用御剑随便扫扫</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/靶机第二题 扫描处理结果.png" alt="御剑扫描结果"></p>
+<p>随便点点</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/靶机第二题 发现SQL注入漏洞.png" alt="发现SQL注入漏洞"></p>
+<p>注入看看</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/靶机第二题 发现对一些SQL参数.png" alt="发现传导参数  有问题"></p>
+<p>发现 没有对order 进行限制</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/靶机第二题 确定字段数 10.png" alt=""></p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/靶机第二题 确定字段数 11.png" alt=""></p>
+<p>  order   by</p>
+<p>经过  处理发现 这个字段有10个</p>
+<p>因为对一些参数进行了限制 ，所以选择另一款软件进行测试</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/靶机第二题 说明2,3,7,8,9表名.png" alt="admin表名"></p>
+<p><code>id=171+union+select+1,username,password,4,5,6,7,8,9,10+from+admin</code></p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/靶机第二题 得到username和password.png" alt="返回信息点"></p>
+<p>把里面的密码 进行解密加密</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/靶机第二题 解密加密.png" alt="解密加密"></p>
+<p>后台登录系统</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/靶机第二题 后台管理界面.png" alt=""></p>
+<p>登录的结果</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/靶机第二题 flag.png" alt="结果"></p>
 
     </div>
 
@@ -291,13 +319,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2019/12/14/SQL%E6%B3%A8%E5%85%A5%E7%AC%AC%E4%B8%80%E9%A2%98/" rel="prev" title="SQL注入第一题">
-      <i class="fa fa-chevron-left"></i> SQL注入第一题
+    <a href="/2019/12/16/SQL%E7%AE%80%E5%8D%95%E6%B3%A8%E5%85%A5/" rel="prev" title="SQL简单注入">
+      <i class="fa fa-chevron-left"></i> SQL简单注入
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2019/12/16/SQL%E7%AE%80%E5%8D%95%E6%B3%A8%E5%85%A5/" rel="next" title="SQL简单注入">
-      SQL简单注入 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -335,7 +360,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#SQL注入第二题"><span class="nav-number">1.</span> <span class="nav-text">SQL注入第二题</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#靶机第二题-SQL注入-当网站参数防注入"><span class="nav-number">1.</span> <span class="nav-text">靶机第二题 SQL注入 当网站参数防注入</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
