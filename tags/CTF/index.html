@@ -46,23 +46,17 @@
   };
 </script>
 
-  <meta name="description" content="我个人喜欢C&#x2F;S架构破解的时候使用hydra，搭配nmap和sqlmap； 下面举几个命令的使用例子： 在linux系统中 对一个IP 的3389爆破hydra 192.168.228.143 rdp -L passs&#x2F;root.txt  -P passs&#x2F;2Gpas.txt -V 一般习惯用nmap扫一下主机，比如发现开放了1433端口（一般就是sql server 了  nmap -A 看看是">
-<meta name="keywords" content="渗透,hydra">
-<meta property="og:type" content="article">
-<meta property="og:title" content="hydra的使用">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;09&#x2F;hydra%E7%9A%84%E4%BD%BF%E7%94%A8&#x2F;index.html">
+  <meta name="description" content="涉猎的主要编程语言为 Python、java、go，领域涵盖发呆吃饭睡觉等。">
+<meta name="keywords" content="吃饭睡觉打豆豆">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Dallosc">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;tags&#x2F;CTF&#x2F;index.html">
 <meta property="og:site_name" content="Dallosc">
-<meta property="og:description" content="我个人喜欢C&#x2F;S架构破解的时候使用hydra，搭配nmap和sqlmap； 下面举几个命令的使用例子： 在linux系统中 对一个IP 的3389爆破hydra 192.168.228.143 rdp -L passs&#x2F;root.txt  -P passs&#x2F;2Gpas.txt -V 一般习惯用nmap扫一下主机，比如发现开放了1433端口（一般就是sql server 了  nmap -A 看看是">
+<meta property="og:description" content="涉猎的主要编程语言为 Python、java、go，领域涵盖发呆吃饭睡觉等。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;1.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;2.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;3.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;4.png">
-<meta property="og:updated_time" content="2019-12-10T07:45:58.550Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;1.png">
 
-<link rel="canonical" href="http://yoursite.com/2019/12/09/hydra%E7%9A%84%E4%BD%BF%E7%94%A8/">
+<link rel="canonical" href="http://yoursite.com/tags/CTF/">
 
 
 <script id="page-configurations">
@@ -70,13 +64,13 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: true,
+    isPost: false,
     isPage: false,
     isArchive: false
   };
 </script>
 
-  <title>hydra的使用 | Dallosc</title>
+  <title>标签: CTF | Dallosc</title>
   
 
 
@@ -210,131 +204,50 @@
           <div class="content">
             
 
-  <div class="posts-expand">
-      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/09/hydra%E7%9A%84%E4%BD%BF%E7%94%A8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Dallosc">
-      <meta itemprop="description" content="涉猎的主要编程语言为 Python、java、go，领域涵盖发呆吃饭睡觉等。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Dallosc">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          hydra的使用
+  
+  <div class="post-block">
+    <div class="posts-collapse">
+      <div class="collection-title">
+        <h1 class="collection-header">CTF
+          <small>标签</small>
         </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-12-09 15:43:21" itemprop="dateCreated datePublished" datetime="2019-12-09T15:43:21+08:00">2019-12-09</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-10 15:45:58" itemprop="dateModified" datetime="2019-12-10T15:45:58+08:00">2019-12-10</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%B8%97%E9%80%8F/" itemprop="url" rel="index">
-                    <span itemprop="name">渗透</span>
-                  </a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+      </div>
 
       
-        <p>我个人喜欢C/S架构破解的时候使用hydra，搭配nmap和sqlmap；</p>
-<p>下面举几个命令的使用例子：</p>
-<p>在linux系统中 对一个IP 的3389爆破<br>hydra 192.168.228.143 rdp -L passs/root.txt  -P passs/2Gpas.txt -V</p>
-<p>一般习惯用nmap扫一下主机，比如发现开放了1433端口（一般就是sql server 了  nmap -A 看看是不是真的运行了sql server服务 ）</p>
-<p>之后：</p>
-<p>hydra.exe -l sa -P d:\pass.txt 127.0.0.1 mssql</p>
-<p>这个命令的意思就是 “d:\pass.txt” 是密码字典路径 hydra就开始遍历这个字典里面的所有字符串。</p>
-<p>如图：<br><img src="http://q20wi1s2d.bkt.clouddn.com/1.png" alt="ace057c2b1c5d129ba024f19662a3223.png"></p>
-<p>然后：<br><img src="http://q20wi1s2d.bkt.clouddn.com/2.png" alt="0001413ee4f6df1cf1635959c4bbd8d8.png"></p>
-<p>使用sqlmap连接，并且反弹与系统交互的shell方便提权。</p>
-<p>语法很多 但是十分简单：</p>
-<p>hydra [[[-l LOGIN|-L FILE] [-p PASS|-P FILE]] | [-C FILE]] [-e ns] [-o FILE] [-t TASKS] [-M FILE [-T TASKS]] [-w TIME] [-f] [-s PORT] [-S] [-vV] server service [OPT]</p>
-<p>（网上找的 凑合看吧）</p>
-<p>下面列举几个hydra 破解命令：</p>
-<p>破解mysql：</p>
-<p>hydra.exe -L d:\user.txt -Pd:\pass.txt127.0.0.1 mysql</p>
-<p>-L:指定用户名文件  -P：指定密码文件</p>
-<p>破解FTP：</p>
-<p>hydra.exe -l admin -P c:\pass.txt -t 5 127.0.0.1 ftp</p>
-<p>-l：指定用户名  -t：指定线程</p>
-<p>破解ssh：</p>
-<p>hydra.exe -L users.txt -P password.txt -e n -t 5 -vV 127.0.0.1 ssh</p>
-<p>“-e n”:对空密码探测</p>
-<p>破解rdp：</p>
-<p>hydra.exe -l administror -P c:\pass.txt www.test.com rdp -V</p>
-<p>破解www.test.com的rdp服务（远程桌面协议）。</p>
-<p>破解pop3：</p>
-<p>hydra.exe -l root -P pass.txt my.pop3.mail pop3</p>
-<p>注意：未指定文件路径时，Hydra将会在本目录下查找文件。</p>
-<p><img src="http://q20wi1s2d.bkt.clouddn.com/3.png" alt="ea912cc387e9824ea47faee9f7627ae1.png"><br><img src="http://q20wi1s2d.bkt.clouddn.com/4.png" alt="aa6a31e844b1c75f50ae2717834c4d4b.png"></p>
-
+    <div class="collection-year">
+      <h1 class="collection-header">2019</h1>
     </div>
 
-    
-    
-    
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
 
-      <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/%E6%B8%97%E9%80%8F/" rel="tag"># 渗透</a>
-              <a href="/tags/hydra/" rel="tag"># hydra</a>
-          </div>
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2019-12-25T21:15:00+08:00"
+              content="2019-12-25">
+          12-25
+        </time>
+      </div>
 
-        
+      <h2 class="post-title">
+          <a class="post-title-link" href="/2019/12/25/CTF%E5%88%9D%E7%BA%A7WEB/" itemprop="url">
+            <span itemprop="name">CTF初级WEB</span>
+          </a>
+      </h2>
 
-
-        
-    <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/2019/12/08/%E4%BD%BF%E7%94%A8%E6%A1%86%E6%9E%B6%E7%A0%B4%E5%9D%8F%E8%84%9A%E6%9C%AC%E8%BF%9B%E8%A1%8C%E7%82%B9%E5%87%BB%E5%8A%AB%E6%8C%81/" rel="prev" title="使用框架破坏脚本进行点击劫持">
-      <i class="fa fa-chevron-left"></i> 使用框架破坏脚本进行点击劫持
-    </a></div>
-      <div class="post-nav-item">
-    <a href="/2019/12/10/XSS%E8%84%9A%E6%9C%AC%E5%AE%9E%E9%AA%8C%E5%AE%A41/" rel="next" title="XSS脚本实验室1">
-      XSS脚本实验室1 <i class="fa fa-chevron-right"></i>
-    </a></div>
-    </div>
-      </footer>
-    
+    </header>
   </article>
+
+    </div>
+  </div>
   
   
   
 
-  </div>
+  
+
 
 
           </div>
