@@ -46,26 +46,46 @@
   };
 </script>
 
-  <meta name="description" content="1.先看看能不能ping通对面  msfconsole  search ms17_010  设置参数  并且run  结果  然后shell   假如对面有防火墙  其实win7也是可以防住的">
-<meta name="keywords" content="渗透">
+  <meta name="description" content="CTF初级WEB第一题题目  然后F12 查看源码就好了  第二题题目  用hakerbar来解决这个问题  第三题题目  再后面加robots.txt 可以查看有什么可以看的  然后打开看看  那个php  第四题题目  在后面加上index.php.bak  第五题题目  说明去cookie里面看看   第六题题目  对于里面的我们就去掉disabled  第七题题目  在js脚本里面看见一串">
+<meta name="keywords" content="CTF,渗透">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2017-永恒之蓝">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;11&#x2F;2017-%E6%B0%B8%E6%81%92%E4%B9%8B%E8%93%9D&#x2F;index.html">
+<meta property="og:title" content="CTF初级WEB">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;24&#x2F;CTF%E5%88%9D%E7%BA%A7WEB&#x2F;index.html">
 <meta property="og:site_name" content="Dallosc">
-<meta property="og:description" content="1.先看看能不能ping通对面  msfconsole  search ms17_010  设置参数  并且run  结果  然后shell   假如对面有防火墙  其实win7也是可以防住的">
+<meta property="og:description" content="CTF初级WEB第一题题目  然后F12 查看源码就好了  第二题题目  用hakerbar来解决这个问题  第三题题目  再后面加robots.txt 可以查看有什么可以看的  然后打开看看  那个php  第四题题目  在后面加上index.php.bak  第五题题目  说明去cookie里面看看   第六题题目  对于里面的我们就去掉disabled  第七题题目  在js脚本里面看见一串">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;2017-永恒之蓝1.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;2017-永恒之蓝2.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;2017-永恒之蓝3.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;2017-永恒之蓝3.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;2017-永恒之蓝5.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;2017-永恒之蓝6.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;2017-永恒之蓝1.png">
-<meta property="og:updated_time" content="2019-12-12T07:46:52.557Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;题目1 题目.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;题目1 解答1.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;题目2 题目.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;题目2 解答1.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;题目3 题目.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;题目3 解答1.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;题目3 解答2.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;题目4 题目.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;题目4 解答1.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;题目5 题目.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;题目5 解答1.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;题目5 解答2.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;题目6 题目.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;题目6 解答1.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;题目7 题目.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;题目7 解答1.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;题目7 解答2.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;题目8 题目.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;题目8 解答1.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;题目9 题目.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;题目9 解答1.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;题目10 题目.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;题目10 解答1.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;题目11 题目.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;题目11 解答1.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;题目12 题目.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;题目12 解答1.png">
+<meta property="og:updated_time" content="2019-12-26T10:42:24.278Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;2017-永恒之蓝1.png">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;q20wi1s2d.bkt.clouddn.com&#x2F;题目1 题目.png">
 
-<link rel="canonical" href="http://yoursite.com/2019/12/11/2017-%E6%B0%B8%E6%81%92%E4%B9%8B%E8%93%9D/">
+<link rel="canonical" href="http://yoursite.com/2019/12/24/CTF%E5%88%9D%E7%BA%A7WEB/">
 
 
 <script id="page-configurations">
@@ -79,7 +99,7 @@
   };
 </script>
 
-  <title>2017-永恒之蓝 | Dallosc</title>
+  <title>CTF初级WEB | Dallosc</title>
   
 
 
@@ -218,7 +238,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/11/2017-%E6%B0%B8%E6%81%92%E4%B9%8B%E8%93%9D/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/24/CTF%E5%88%9D%E7%BA%A7WEB/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -231,7 +251,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          2017-永恒之蓝
+          CTF初级WEB
         </h1>
 
         <div class="post-meta">
@@ -241,15 +261,26 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-12-11 10:48:26" itemprop="dateCreated datePublished" datetime="2019-12-11T10:48:26+08:00">2019-12-11</time>
+              <time title="创建时间：2019-12-24 20:15:00" itemprop="dateCreated datePublished" datetime="2019-12-24T20:15:00+08:00">2019-12-24</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-12 15:46:52" itemprop="dateModified" datetime="2019-12-12T15:46:52+08:00">2019-12-12</time>
+                <time title="修改时间：2019-12-26 18:42:24" itemprop="dateModified" datetime="2019-12-26T18:42:24+08:00">2019-12-26</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%B8%97%E9%80%8F/" itemprop="url" rel="index">
+                    <span itemprop="name">渗透</span>
+                  </a>
+                </span>
+            </span>
 
           
 
@@ -262,19 +293,60 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>1.先看看能不能ping通对面</p>
-<ol>
-<li><p>msfconsole<br><img src="http://q20wi1s2d.bkt.clouddn.com/2017-永恒之蓝1.png" alt="2017-永恒之蓝1"></p>
-</li>
-<li><p>search ms17_010<br><img src="http://q20wi1s2d.bkt.clouddn.com/2017-永恒之蓝2.png" alt="2017-永恒之蓝2"></p>
-</li>
-<li><p>设置参数  并且run<br><img src="http://q20wi1s2d.bkt.clouddn.com/2017-永恒之蓝3.png" alt="63bf3bda19653815d91315a4d82fce53.png"><br><img src="http://q20wi1s2d.bkt.clouddn.com/2017-永恒之蓝3.png" alt="e60b48c9ad6b7d06ea309bf032c9df8a.png"></p>
-</li>
-<li>结果  然后shell<br><img src="http://q20wi1s2d.bkt.clouddn.com/2017-永恒之蓝5.png" alt="b2aa09e2d34e1c40a51df62dc530162c.png"></li>
-</ol>
-<p><img src="http://q20wi1s2d.bkt.clouddn.com/2017-永恒之蓝6.png" alt="8ef137789ca6f75d967e8d0bf38880f8.png"></p>
-<p>假如对面有防火墙  其实win7也是可以防住的</p>
-<p><img src="http://q20wi1s2d.bkt.clouddn.com/2017-永恒之蓝1.png" alt="222"></p>
+        <h2 id="CTF初级WEB"><a href="#CTF初级WEB" class="headerlink" title="CTF初级WEB"></a>CTF初级WEB</h2><h3 id="第一题"><a href="#第一题" class="headerlink" title="第一题"></a>第一题</h3><p>题目</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/题目1 题目.png" alt=""></p>
+<p>然后F12 查看源码就好了</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/题目1 解答1.png" alt=""></p>
+<h3 id="第二题"><a href="#第二题" class="headerlink" title="第二题"></a>第二题</h3><p>题目</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/题目2 题目.png" alt=""></p>
+<p>用hakerbar来解决这个问题</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/题目2 解答1.png" alt=""></p>
+<h3 id="第三题"><a href="#第三题" class="headerlink" title="第三题"></a>第三题</h3><p>题目</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/题目3 题目.png" alt=""></p>
+<p>再后面加robots.txt</p>
+<p>可以查看有什么可以看的</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/题目3 解答1.png" alt=""></p>
+<p>然后打开看看  那个php</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/题目3 解答2.png" alt=""></p>
+<h3 id="第四题"><a href="#第四题" class="headerlink" title="第四题"></a>第四题</h3><p>题目</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/题目4 题目.png" alt=""></p>
+<p>在后面加上index.php.bak</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/题目4 解答1.png" alt=""></p>
+<h3 id="第五题"><a href="#第五题" class="headerlink" title="第五题"></a>第五题</h3><p>题目</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/题目5 题目.png" alt=""></p>
+<p>说明去cookie里面看看</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/题目5 解答1.png" alt=""></p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/题目5 解答2.png" alt=""></p>
+<h3 id="第六题"><a href="#第六题" class="headerlink" title="第六题"></a>第六题</h3><p>题目</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/题目6 题目.png" alt=""></p>
+<p>对于里面的我们就去掉disabled</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/题目6 解答1.png" alt=""></p>
+<h3 id="第七题"><a href="#第七题" class="headerlink" title="第七题"></a>第七题</h3><p>题目</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/题目7 题目.png" alt=""></p>
+<p>在js脚本里面看见一串十六进制</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/题目7 解答1.png" alt=""></p>
+<p>然后对那串东西进行转换</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/题目7 解答2.png" alt=""></p>
+<h3 id="第八题"><a href="#第八题" class="headerlink" title="第八题"></a>第八题</h3><p>题目</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/题目8 题目.png" alt=""></p>
+<p>用 bp进行修改 转发</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/题目8 解答1.png" alt=""></p>
+<h3 id="第九题"><a href="#第九题" class="headerlink" title="第九题"></a>第九题</h3><p>题目</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/题目9 题目.png" alt=""></p>
+<p>这是一个弱口令</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/题目9 解答1.png" alt=""></p>
+<h3 id="第十题"><a href="#第十题" class="headerlink" title="第十题"></a>第十题</h3><p>题目</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/题目10 题目.png" alt=""></p>
+<p>直接菜刀上线</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/题目10 解答1.png" alt=""></p>
+<h3 id="第十一题"><a href="#第十一题" class="headerlink" title="第十一题"></a>第十一题</h3><p>题目</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/题目11 题目.png" alt=""></p>
+<p>首先测试所有的截断符号：<br>‘$’<br>‘;’<br>‘|’<br>‘-’<br>‘(’<br>‘)’<br>‘反引号’<br>‘||’<br>‘&amp;&amp;’<br>‘&amp;’<br>‘}’<br>‘{’<br>‘%0a’可以当作空格来用；</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/题目11 解答1.png" alt=""></p>
+<h3 id="第十二题"><a href="#第十二题" class="headerlink" title="第十二题"></a>第十二题</h3><p>题目</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/题目12 题目.png" alt=""></p>
+<p>对php进行解读  属于是代码审计</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/题目12 解答1.png" alt=""></p>
 
     </div>
 
@@ -284,6 +356,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
+              <a href="/tags/CTF/" rel="tag"># CTF</a>
               <a href="/tags/%E6%B8%97%E9%80%8F/" rel="tag"># 渗透</a>
           </div>
 
@@ -293,12 +366,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2019/12/10/WebSocket%E5%AE%9E%E9%AA%8C%E5%AE%A41/" rel="prev" title="WebSocket实验室1">
-      <i class="fa fa-chevron-left"></i> WebSocket实验室1
+    <a href="/2019/12/20/%E9%9D%B6%E6%9C%BA%E7%AC%AC%E4%BA%94%E9%A2%98/" rel="prev" title="靶机第五题">
+      <i class="fa fa-chevron-left"></i> 靶机第五题
     </a></div>
       <div class="post-nav-item">
-    <a href="/2019/12/12/%E4%B8%80%E6%AE%B5%E6%97%B6%E9%97%B4%E6%80%BB%E7%BB%93/" rel="next" title="一段时间总结">
-      一段时间总结 <i class="fa fa-chevron-right"></i>
+    <a href="/2019/12/25/%E8%BF%9B%E9%98%B6%E9%A2%98%E7%9B%AE1/" rel="next" title="进阶题目1">
+      进阶题目1 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -337,6 +410,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#CTF初级WEB"><span class="nav-number">1.</span> <span class="nav-text">CTF初级WEB</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一题"><span class="nav-number">1.1.</span> <span class="nav-text">第一题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二题"><span class="nav-number">1.2.</span> <span class="nav-text">第二题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三题"><span class="nav-number">1.3.</span> <span class="nav-text">第三题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第四题"><span class="nav-number">1.4.</span> <span class="nav-text">第四题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第五题"><span class="nav-number">1.5.</span> <span class="nav-text">第五题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第六题"><span class="nav-number">1.6.</span> <span class="nav-text">第六题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第七题"><span class="nav-number">1.7.</span> <span class="nav-text">第七题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第八题"><span class="nav-number">1.8.</span> <span class="nav-text">第八题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第九题"><span class="nav-number">1.9.</span> <span class="nav-text">第九题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第十题"><span class="nav-number">1.10.</span> <span class="nav-text">第十题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第十一题"><span class="nav-number">1.11.</span> <span class="nav-text">第十一题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第十二题"><span class="nav-number">1.12.</span> <span class="nav-text">第十二题</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

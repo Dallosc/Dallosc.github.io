@@ -209,7 +209,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/25/CTF%E5%88%9D%E7%BA%A7WEB/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/26/%E8%BF%9B%E9%98%B6%E9%A2%98%E7%9B%AE2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -223,7 +223,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/12/25/CTF%E5%88%9D%E7%BA%A7WEB/" class="post-title-link" itemprop="url">CTF初级WEB</a>
+            <a href="/2019/12/26/%E8%BF%9B%E9%98%B6%E9%A2%98%E7%9B%AE2/" class="post-title-link" itemprop="url">进阶题目2</a>
         </h1>
 
         <div class="post-meta">
@@ -234,8 +234,217 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2019-12-25 21:15:00 / 修改时间：21:37:43" itemprop="dateCreated datePublished" datetime="2019-12-25T21:15:00+08:00">2019-12-25</time>
+              <time title="创建时间：2019-12-26 18:42:41 / 修改时间：18:57:58" itemprop="dateCreated datePublished" datetime="2019-12-26T18:42:41+08:00">2019-12-26</time>
             </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%B8%97%E9%80%8F/" itemprop="url" rel="index">
+                    <span itemprop="name">渗透</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="CTF-WEB-进阶题目"><a href="#CTF-WEB-进阶题目" class="headerlink" title="CTF WEB 进阶题目"></a>CTF WEB 进阶题目</h2><h3 id="进阶题目3"><a href="#进阶题目3" class="headerlink" title="进阶题目3"></a>进阶题目3</h3><p>题目</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目3 题目.png" alt=""></p>
+<p>根据提示，得知与登录和注册有关系。首页面的左侧，看来一圈，都是没有用的。</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目3 解答1.png" alt=""></p>
+<p>在注册里面发现，可以随便注册，而且你注册过了admin还可以再注册一个。</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目3 解答2.png" alt=""></p>
+<p>登录之后，我们是普通用户，没有用，但是多了一个忘记密码的网址可以进去。</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目3 解答3.png" alt=""></p>
+<p>找回密码试了下</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目3 解答4.png" alt=""></p>
+<p>可以进行一个SQLZ注入。SQL注入的步骤</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目3 解答5.png" alt=""></p>
+<p>先看看当前数据库的名字</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目3 解答6.png" alt=""></p>
+<p>返回结果</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目3 解答7.png" alt=""></p>
+<p>然后看看表名</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目3 解答8.png" alt=""></p>
+<p>返回结果  一个user表</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目3 解答9.png" alt=""></p>
+<p>然后看看列表名</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目3 解答10.png" alt=""></p>
+<p>返回列表名 answer password question username</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目3 解答11.png" alt=""></p>
+<p>最后就是查看列表内容</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目3 解答12.png" alt=""></p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目3 解答13.png" alt=""></p>
+<p>然后用上述的账号密码去修改密码，不知道为什么不行。</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目3 解答14.png" alt=""></p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目3 解答15.png" alt=""></p>
+<p>然后去注册一个，看看是不是会覆盖，现在知道账号。 前面提到了账号可以多次注册，而且不会报错。</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目3 解答16.png" alt=""></p>
+<p>返回FLAG</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目3 解答17.png" alt=""></p>
+<p>很久没遇见这种可以SQL注入的事情，好开心啊</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/25/%E8%BF%9B%E9%98%B6%E9%A2%98%E7%9B%AE1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Dallosc">
+      <meta itemprop="description" content="涉猎的主要编程语言为 Python、java、go，领域涵盖发呆吃饭睡觉等。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dallosc">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/12/25/%E8%BF%9B%E9%98%B6%E9%A2%98%E7%9B%AE1/" class="post-title-link" itemprop="url">进阶题目1</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-12-25 21:17:11" itemprop="dateCreated datePublished" datetime="2019-12-25T21:17:11+08:00">2019-12-25</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-12-26 18:42:33" itemprop="dateModified" datetime="2019-12-26T18:42:33+08:00">2019-12-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%B8%97%E9%80%8F/" itemprop="url" rel="index">
+                    <span itemprop="name">渗透</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="CTF进阶WEB题目"><a href="#CTF进阶WEB题目" class="headerlink" title="CTF进阶WEB题目"></a>CTF进阶WEB题目</h2><h3 id="进阶题目1"><a href="#进阶题目1" class="headerlink" title="进阶题目1"></a>进阶题目1</h3><p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目1 题目.png" alt=""></p>
+<p>有提示，说明了初始页面上回有我们想要的东西</p>
+<p>初始页面是111.198.29.45:42536</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目1 解答1.png" alt=""></p>
+<p>然后再初始页面的里面找到了FLAG</p>
+<h3 id="进阶题目2"><a href="#进阶题目2" class="headerlink" title="进阶题目2"></a>进阶题目2</h3><p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目2 题目.png" alt=""></p>
+<p>提示没有看懂，先进去看看</p>
+<p>输入一个ip，可以ping，看看是不是命令漏洞</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目2 解答1.png" alt=""></p>
+<p>发现不是命令漏洞，因为输入127.0.0.1|ls /home 返回了一个</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目2 解答2.png" alt=""></p>
+<p>去网上看看了大神的writeup，发现是考察的是url编码和django的知识。</p>
+<p>对于Django没有想法。</p>
+<p>在url里传参<code>%80</code>报错（URL编码是0~127，80的十六进制是128自然报错），从报错信息的目录结构可以知道这个是Django的项目。</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目2 解答3.png" alt=""></p>
+<p>根据Django的目录特性，用@进行文件传递，对文件进行读取之后将内容传给url参数，如果有错误信息就可以得到回显，进而取得更多错误信息、帮助我们拿到flag。</p>
+<p>先看看settings.py：</p>
+<p>payload: <code>?url=@/opt/api/api/settings.py</code></p>
+<p>找到数据库文件的存放位置：</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目2 解答4.png" alt=""></p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目2 解答5.png" alt=""></p>
+<p>看看这个文件：</p>
+<p>payload： <code>?url=@/opt/api/database.sqlite3</code></p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目2 解答6.png" alt=""></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/24/CTF%E5%88%9D%E7%BA%A7WEB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Dallosc">
+      <meta itemprop="description" content="涉猎的主要编程语言为 Python、java、go，领域涵盖发呆吃饭睡觉等。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dallosc">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/12/24/CTF%E5%88%9D%E7%BA%A7WEB/" class="post-title-link" itemprop="url">CTF初级WEB</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-12-24 20:15:00" itemprop="dateCreated datePublished" datetime="2019-12-24T20:15:00+08:00">2019-12-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-12-26 18:42:24" itemprop="dateModified" datetime="2019-12-26T18:42:24+08:00">2019-12-26</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -954,167 +1163,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/15/SQL%E6%B3%A8%E5%85%A5%E7%AC%AC%E4%BA%8C%E9%A2%98/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Dallosc">
-      <meta itemprop="description" content="涉猎的主要编程语言为 Python、java、go，领域涵盖发呆吃饭睡觉等。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Dallosc">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/12/15/SQL%E6%B3%A8%E5%85%A5%E7%AC%AC%E4%BA%8C%E9%A2%98/" class="post-title-link" itemprop="url">SQL注入第二题</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-12-15 15:27:47" itemprop="dateCreated datePublished" datetime="2019-12-15T15:27:47+08:00">2019-12-15</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-17 15:48:49" itemprop="dateModified" datetime="2019-12-17T15:48:49+08:00">2019-12-17</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%B8%97%E9%80%8F/" itemprop="url" rel="index">
-                    <span itemprop="name">渗透</span>
-                  </a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="SQL注入第二题"><a href="#SQL注入第二题" class="headerlink" title="SQL注入第二题"></a>SQL注入第二题</h3><p>根据题意 可以知道  这个是万能钥匙题</p>
-<p><img src="http://q20wi1s2d.bkt.clouddn.com/SQL注入 第二题1.png" alt="根据题意"></p>
-<p><img src="http://q20wi1s2d.bkt.clouddn.com/SQL注入 第二题2.png" alt="结果返回"></p>
-<p><code>username=admin&#39; or &#39;1&#39;=&#39;1&amp;password=&#39;or 1=1#&amp;login=Login</code></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/14/SQL%E6%B3%A8%E5%85%A5%E7%AC%AC%E4%B8%80%E9%A2%98/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Dallosc">
-      <meta itemprop="description" content="涉猎的主要编程语言为 Python、java、go，领域涵盖发呆吃饭睡觉等。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Dallosc">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/12/14/SQL%E6%B3%A8%E5%85%A5%E7%AC%AC%E4%B8%80%E9%A2%98/" class="post-title-link" itemprop="url">SQL注入第一题</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-12-14 15:27:39" itemprop="dateCreated datePublished" datetime="2019-12-14T15:27:39+08:00">2019-12-14</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-17 15:44:19" itemprop="dateModified" datetime="2019-12-17T15:44:19+08:00">2019-12-17</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%B8%97%E9%80%8F/" itemprop="url" rel="index">
-                    <span itemprop="name">渗透</span>
-                  </a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="SQL注入-第一题"><a href="#SQL注入-第一题" class="headerlink" title="SQL注入 第一题"></a>SQL注入 第一题</h3><p>根据题目意思 我们会发现注入点 在URL   然后</p>
-<p><img src="http://q20wi1s2d.bkt.clouddn.com/SQL注入 第一题1.png" alt="爆字段"></p>
-<p>根据步骤</p>
-<p>先确定 字段位、显示位、爆字段、联合查询</p>
-<p>最后确定了结果</p>
-<p><code>https://redtiger.labs.overthewire.org/level1.php?cat=-1 union select 1,2,username,password from level1_users#</code></p>
-<p><img src="http://q20wi1s2d.bkt.clouddn.com/SQL注入 第一题2.png" alt="结果返回"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -1165,7 +1213,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">25</span>
+          <span class="site-state-item-count">27</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

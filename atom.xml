@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-12-25T13:37:43.630Z</updated>
+  <updated>2019-12-26T10:57:58.682Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,67 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>进阶题目2</title>
+    <link href="http://yoursite.com/2019/12/26/%E8%BF%9B%E9%98%B6%E9%A2%98%E7%9B%AE2/"/>
+    <id>http://yoursite.com/2019/12/26/%E8%BF%9B%E9%98%B6%E9%A2%98%E7%9B%AE2/</id>
+    <published>2019-12-26T10:42:41.000Z</published>
+    <updated>2019-12-26T10:57:58.682Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="CTF-WEB-进阶题目"><a href="#CTF-WEB-进阶题目" class="headerlink" title="CTF WEB 进阶题目"></a>CTF WEB 进阶题目</h2><h3 id="进阶题目3"><a href="#进阶题目3" class="headerlink" title="进阶题目3"></a>进阶题目3</h3><p>题目</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目3 题目.png" alt=""></p><p>根据提示，得知与登录和注册有关系。首页面的左侧，看来一圈，都是没有用的。</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目3 解答1.png" alt=""></p><p>在注册里面发现，可以随便注册，而且你注册过了admin还可以再注册一个。</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目3 解答2.png" alt=""></p><p>登录之后，我们是普通用户，没有用，但是多了一个忘记密码的网址可以进去。</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目3 解答3.png" alt=""></p><p>找回密码试了下</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目3 解答4.png" alt=""></p><p>可以进行一个SQLZ注入。SQL注入的步骤</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目3 解答5.png" alt=""></p><p>先看看当前数据库的名字</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目3 解答6.png" alt=""></p><p>返回结果</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目3 解答7.png" alt=""></p><p>然后看看表名</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目3 解答8.png" alt=""></p><p>返回结果  一个user表</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目3 解答9.png" alt=""></p><p>然后看看列表名</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目3 解答10.png" alt=""></p><p>返回列表名 answer password question username</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目3 解答11.png" alt=""></p><p>最后就是查看列表内容</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目3 解答12.png" alt=""></p><p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目3 解答13.png" alt=""></p><p>然后用上述的账号密码去修改密码，不知道为什么不行。</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目3 解答14.png" alt=""></p><p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目3 解答15.png" alt=""></p><p>然后去注册一个，看看是不是会覆盖，现在知道账号。 前面提到了账号可以多次注册，而且不会报错。</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目3 解答16.png" alt=""></p><p>返回FLAG</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目3 解答17.png" alt=""></p><p>很久没遇见这种可以SQL注入的事情，好开心啊</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;CTF-WEB-进阶题目&quot;&gt;&lt;a href=&quot;#CTF-WEB-进阶题目&quot; class=&quot;headerlink&quot; title=&quot;CTF WEB 进阶题目&quot;&gt;&lt;/a&gt;CTF WEB 进阶题目&lt;/h2&gt;&lt;h3 id=&quot;进阶题目3&quot;&gt;&lt;a href=&quot;#进阶题目3&quot; c
+      
+    
+    </summary>
+    
+    
+      <category term="渗透" scheme="http://yoursite.com/categories/%E6%B8%97%E9%80%8F/"/>
+    
+    
+      <category term="CTF" scheme="http://yoursite.com/tags/CTF/"/>
+    
+      <category term="渗透" scheme="http://yoursite.com/tags/%E6%B8%97%E9%80%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>进阶题目1</title>
+    <link href="http://yoursite.com/2019/12/25/%E8%BF%9B%E9%98%B6%E9%A2%98%E7%9B%AE1/"/>
+    <id>http://yoursite.com/2019/12/25/%E8%BF%9B%E9%98%B6%E9%A2%98%E7%9B%AE1/</id>
+    <published>2019-12-25T13:17:11.000Z</published>
+    <updated>2019-12-26T10:42:33.651Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="CTF进阶WEB题目"><a href="#CTF进阶WEB题目" class="headerlink" title="CTF进阶WEB题目"></a>CTF进阶WEB题目</h2><h3 id="进阶题目1"><a href="#进阶题目1" class="headerlink" title="进阶题目1"></a>进阶题目1</h3><p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目1 题目.png" alt=""></p><p>有提示，说明了初始页面上回有我们想要的东西</p><p>初始页面是111.198.29.45:42536</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目1 解答1.png" alt=""></p><p>然后再初始页面的里面找到了FLAG</p><h3 id="进阶题目2"><a href="#进阶题目2" class="headerlink" title="进阶题目2"></a>进阶题目2</h3><p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目2 题目.png" alt=""></p><p>提示没有看懂，先进去看看</p><p>输入一个ip，可以ping，看看是不是命令漏洞</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目2 解答1.png" alt=""></p><p>发现不是命令漏洞，因为输入127.0.0.1|ls /home 返回了一个</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目2 解答2.png" alt=""></p><p>去网上看看了大神的writeup，发现是考察的是url编码和django的知识。</p><p>对于Django没有想法。</p><p>在url里传参<code>%80</code>报错（URL编码是0~127，80的十六进制是128自然报错），从报错信息的目录结构可以知道这个是Django的项目。</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目2 解答3.png" alt=""></p><p>根据Django的目录特性，用@进行文件传递，对文件进行读取之后将内容传给url参数，如果有错误信息就可以得到回显，进而取得更多错误信息、帮助我们拿到flag。</p><p>先看看settings.py：</p><p>payload: <code>?url=@/opt/api/api/settings.py</code></p><p>找到数据库文件的存放位置：</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目2 解答4.png" alt=""></p><p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目2 解答5.png" alt=""></p><p>看看这个文件：</p><p>payload： <code>?url=@/opt/api/database.sqlite3</code></p><p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目2 解答6.png" alt=""></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;CTF进阶WEB题目&quot;&gt;&lt;a href=&quot;#CTF进阶WEB题目&quot; class=&quot;headerlink&quot; title=&quot;CTF进阶WEB题目&quot;&gt;&lt;/a&gt;CTF进阶WEB题目&lt;/h2&gt;&lt;h3 id=&quot;进阶题目1&quot;&gt;&lt;a href=&quot;#进阶题目1&quot; class=&quot;he
+      
+    
+    </summary>
+    
+    
+      <category term="渗透" scheme="http://yoursite.com/categories/%E6%B8%97%E9%80%8F/"/>
+    
+    
+      <category term="CTF" scheme="http://yoursite.com/tags/CTF/"/>
+    
+      <category term="渗透" scheme="http://yoursite.com/tags/%E6%B8%97%E9%80%8F/"/>
+    
+  </entry>
+  
+  <entry>
     <title>CTF初级WEB</title>
-    <link href="http://yoursite.com/2019/12/25/CTF%E5%88%9D%E7%BA%A7WEB/"/>
-    <id>http://yoursite.com/2019/12/25/CTF%E5%88%9D%E7%BA%A7WEB/</id>
-    <published>2019-12-25T13:15:00.000Z</published>
-    <updated>2019-12-25T13:37:43.630Z</updated>
+    <link href="http://yoursite.com/2019/12/24/CTF%E5%88%9D%E7%BA%A7WEB/"/>
+    <id>http://yoursite.com/2019/12/24/CTF%E5%88%9D%E7%BA%A7WEB/</id>
+    <published>2019-12-24T12:15:00.000Z</published>
+    <updated>2019-12-26T10:42:24.278Z</updated>
     
     <content type="html"><![CDATA[<h2 id="CTF初级WEB"><a href="#CTF初级WEB" class="headerlink" title="CTF初级WEB"></a>CTF初级WEB</h2><h3 id="第一题"><a href="#第一题" class="headerlink" title="第一题"></a>第一题</h3><p>题目</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/题目1 题目.png" alt=""></p><p>然后F12 查看源码就好了</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/题目1 解答1.png" alt=""></p><h3 id="第二题"><a href="#第二题" class="headerlink" title="第二题"></a>第二题</h3><p>题目</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/题目2 题目.png" alt=""></p><p>用hakerbar来解决这个问题</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/题目2 解答1.png" alt=""></p><h3 id="第三题"><a href="#第三题" class="headerlink" title="第三题"></a>第三题</h3><p>题目</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/题目3 题目.png" alt=""></p><p>再后面加robots.txt</p><p>可以查看有什么可以看的</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/题目3 解答1.png" alt=""></p><p>然后打开看看  那个php</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/题目3 解答2.png" alt=""></p><h3 id="第四题"><a href="#第四题" class="headerlink" title="第四题"></a>第四题</h3><p>题目</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/题目4 题目.png" alt=""></p><p>在后面加上index.php.bak</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/题目4 解答1.png" alt=""></p><h3 id="第五题"><a href="#第五题" class="headerlink" title="第五题"></a>第五题</h3><p>题目</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/题目5 题目.png" alt=""></p><p>说明去cookie里面看看</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/题目5 解答1.png" alt=""></p><p><img src="http://q20wi1s2d.bkt.clouddn.com/题目5 解答2.png" alt=""></p><h3 id="第六题"><a href="#第六题" class="headerlink" title="第六题"></a>第六题</h3><p>题目</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/题目6 题目.png" alt=""></p><p>对于里面的我们就去掉disabled</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/题目6 解答1.png" alt=""></p><h3 id="第七题"><a href="#第七题" class="headerlink" title="第七题"></a>第七题</h3><p>题目</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/题目7 题目.png" alt=""></p><p>在js脚本里面看见一串十六进制</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/题目7 解答1.png" alt=""></p><p>然后对那串东西进行转换</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/题目7 解答2.png" alt=""></p><h3 id="第八题"><a href="#第八题" class="headerlink" title="第八题"></a>第八题</h3><p>题目</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/题目8 题目.png" alt=""></p><p>用 bp进行修改 转发</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/题目8 解答1.png" alt=""></p><h3 id="第九题"><a href="#第九题" class="headerlink" title="第九题"></a>第九题</h3><p>题目</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/题目9 题目.png" alt=""></p><p>这是一个弱口令</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/题目9 解答1.png" alt=""></p><h3 id="第十题"><a href="#第十题" class="headerlink" title="第十题"></a>第十题</h3><p>题目</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/题目10 题目.png" alt=""></p><p>直接菜刀上线</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/题目10 解答1.png" alt=""></p><h3 id="第十一题"><a href="#第十一题" class="headerlink" title="第十一题"></a>第十一题</h3><p>题目</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/题目11 题目.png" alt=""></p><p>首先测试所有的截断符号：<br>‘$’<br>‘;’<br>‘|’<br>‘-’<br>‘(’<br>‘)’<br>‘反引号’<br>‘||’<br>‘&amp;&amp;’<br>‘&amp;’<br>‘}’<br>‘{’<br>‘%0a’可以当作空格来用；</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/题目11 解答1.png" alt=""></p><h3 id="第十二题"><a href="#第十二题" class="headerlink" title="第十二题"></a>第十二题</h3><p>题目</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/题目12 题目.png" alt=""></p><p>对php进行解读  属于是代码审计</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/题目12 解答1.png" alt=""></p>]]></content>
     
@@ -534,60 +590,6 @@
       <category term="渗透" scheme="http://yoursite.com/tags/%E6%B8%97%E9%80%8F/"/>
     
       <category term="UI劫持" scheme="http://yoursite.com/tags/UI%E5%8A%AB%E6%8C%81/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>WebSockets实验室1</title>
-    <link href="http://yoursite.com/2019/12/07/UI%E5%8A%AB%E6%8C%81%E5%AE%9E%E9%AA%8C%E5%AE%A41/"/>
-    <id>http://yoursite.com/2019/12/07/UI%E5%8A%AB%E6%8C%81%E5%AE%9E%E9%AA%8C%E5%AE%A41/</id>
-    <published>2019-12-07T04:48:15.000Z</published>
-    <updated>2019-12-07T10:39:34.258Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="UI点击劫持实验室1"><a href="#UI点击劫持实验室1" class="headerlink" title="UI点击劫持实验室1"></a>UI点击劫持实验室1</h3><p>目标<br><img src="http://q20wi1s2d.bkt.clouddn.com/目标.png" alt="目标"></p><p>对于实现 需要做什么<br><img src="http://q20wi1s2d.bkt.clouddn.com/需要做什么.png" alt="对于实现 需要做什么"><br>实验成功图<br><img src="http://q20wi1s2d.bkt.clouddn.com/成功.png" alt="实验成功图"></p><p>漏洞利用服务器 需要的代码<br>价格click me 方块上去  设置位置 与大小<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">   iframe &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">       position:relative;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">       width:700px;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">       height: 500px;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">       opacity: 0.0001;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">       z-index: 2;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">   &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">   div &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">       position:absolute;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">       top:300px;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">       left: 60px;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">       z-index: 1;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">   &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">&lt;&#x2F;style&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">&lt;div&gt;Click me&lt;&#x2F;div&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">&lt;iframe src&#x3D;&quot;https:&#x2F;&#x2F;acf71f461fff1ef3809f014c00f90004.web-security-academy.net&#x2F;account&quot;&gt;&lt;&#x2F;iframe&gt;</span></pre></td></tr></table></figure><br><img src="http://q20wi1s2d.bkt.clouddn.com/zhenx.png" alt="真香"></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;UI点击劫持实验室1&quot;&gt;&lt;a href=&quot;#UI点击劫持实验室1&quot; class=&quot;headerlink&quot; title=&quot;UI点击劫持实验室1&quot;&gt;&lt;/a&gt;UI点击劫持实验室1&lt;/h3&gt;&lt;p&gt;目标&lt;br&gt;&lt;img src=&quot;http://q20wi1s2d.bkt.c
-      
-    
-    </summary>
-    
-    
-      <category term="渗透" scheme="http://yoursite.com/categories/%E6%B8%97%E9%80%8F/"/>
-    
-    
-      <category term="渗透" scheme="http://yoursite.com/tags/%E6%B8%97%E9%80%8F/"/>
-    
-      <category term="UI点击劫持" scheme="http://yoursite.com/tags/UI%E7%82%B9%E5%87%BB%E5%8A%AB%E6%8C%81/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>FuzzScanner的使用</title>
-    <link href="http://yoursite.com/2019/12/06/FuzzScanner%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
-    <id>http://yoursite.com/2019/12/06/FuzzScanner%E7%9A%84%E4%BD%BF%E7%94%A8/</id>
-    <published>2019-12-06T13:47:54.000Z</published>
-    <updated>2019-12-06T13:49:43.043Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="FuzzScanner"><a href="#FuzzScanner" class="headerlink" title="FuzzScanner"></a>FuzzScanner</h3><p>一个用来进行信息搜集的工具集，主要是用于对网站子域名、开放端口、端口指纹、c段地址、敏感目录、链接爬取等信息进行批量搜集。</p><p>使用比较简单：<br>从github上拖下来<br><strong>git clone <a href="https://github.com/TideSec/FuzzScanner" target="_blank" rel="noopener">https://github.com/TideSec/FuzzScanner</a></strong><br>安装requirements.txt依赖<br><strong>pip install -r requirements.txt</strong><br>安装ruby环境，以便运行whatweb<br><strong>udo yum install ruby</strong>    # CentOS, Fedora, 或 RHEL 系统<br><strong>sudo apt-get install ruby-full</strong> # Debian 或 Ubuntu 系统<br>安装namp<br><strong>yum install nmap</strong>  # CentOS, Fedora, 或 RHEL 系统<br><strong>apt-get install nmap</strong>  # Debian 或 Ubuntu 系统<br>运行脚本，因为调用nmap需要root权限，<br>所以需要sudo。<br><strong>sudo python FuzzScanner.py</strong><br>执行fuzzscanner</p><p>root@Docker:~# <strong>docker run —name fuzzscanner -t -i 52341fc71d0a /bin/bash</strong></p><p>[root@a7edd0d9fdad /]# <strong>cd /root/FuzzScanner/</strong><br>[root@a7edd0d9fdad FuzzScanner]# <strong>python FuzzScanner.py</strong><br><img src="en-resource://database/6032:1" alt="dedb50011079859f957e60005aa25f46.png"></p><h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><p>1、在扫描c段时，如果选择了全端口扫描，速度会比较慢，但可能会有惊喜。适合有个服务器放上面慢慢跑。<br>2、如果选择了目录枚举，可能速度也会比较慢，目录枚举是直接用的dirsearch，在启用该功能后当发现某端口为web服务时就会调用dirsearch。</p><p>可以对里面的参数进行  设置<br>若不设置 就是扫描全段</p><p><strong>python FuzzScanner.py  -h vipshop.com</strong><br>就是对   vipshop.com进行扫描<br>保存了网站信息、网站标题、中间件信息、waf信息、端口信息、目录扫描信息等等。</p><p>扫描挺花费时间的     可以扔到一个服务器里面进行扫描</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;FuzzScanner&quot;&gt;&lt;a href=&quot;#FuzzScanner&quot; class=&quot;headerlink&quot; title=&quot;FuzzScanner&quot;&gt;&lt;/a&gt;FuzzScanner&lt;/h3&gt;&lt;p&gt;一个用来进行信息搜集的工具集，主要是用于对网站子域名、开放端口、端口
-      
-    
-    </summary>
-    
-    
-      <category term="渗透" scheme="http://yoursite.com/categories/%E6%B8%97%E9%80%8F/"/>
-    
-    
-      <category term="信息收集" scheme="http://yoursite.com/tags/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/"/>
     
   </entry>
   

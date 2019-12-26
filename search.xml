@@ -1,8 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>进阶题目2</title>
+    <url>/2019/12/26/%E8%BF%9B%E9%98%B6%E9%A2%98%E7%9B%AE2/</url>
+    <content><![CDATA[<h2 id="CTF-WEB-进阶题目"><a href="#CTF-WEB-进阶题目" class="headerlink" title="CTF WEB 进阶题目"></a>CTF WEB 进阶题目</h2><h3 id="进阶题目3"><a href="#进阶题目3" class="headerlink" title="进阶题目3"></a>进阶题目3</h3><p>题目</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目3 题目.png" alt=""></p>
+<p>根据提示，得知与登录和注册有关系。首页面的左侧，看来一圈，都是没有用的。</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目3 解答1.png" alt=""></p>
+<p>在注册里面发现，可以随便注册，而且你注册过了admin还可以再注册一个。</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目3 解答2.png" alt=""></p>
+<p>登录之后，我们是普通用户，没有用，但是多了一个忘记密码的网址可以进去。</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目3 解答3.png" alt=""></p>
+<p>找回密码试了下</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目3 解答4.png" alt=""></p>
+<p>可以进行一个SQLZ注入。SQL注入的步骤</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目3 解答5.png" alt=""></p>
+<p>先看看当前数据库的名字</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目3 解答6.png" alt=""></p>
+<p>返回结果</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目3 解答7.png" alt=""></p>
+<p>然后看看表名</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目3 解答8.png" alt=""></p>
+<p>返回结果  一个user表</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目3 解答9.png" alt=""></p>
+<p>然后看看列表名</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目3 解答10.png" alt=""></p>
+<p>返回列表名 answer password question username</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目3 解答11.png" alt=""></p>
+<p>最后就是查看列表内容</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目3 解答12.png" alt=""></p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目3 解答13.png" alt=""></p>
+<p>然后用上述的账号密码去修改密码，不知道为什么不行。</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目3 解答14.png" alt=""></p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目3 解答15.png" alt=""></p>
+<p>然后去注册一个，看看是不是会覆盖，现在知道账号。 前面提到了账号可以多次注册，而且不会报错。</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目3 解答16.png" alt=""></p>
+<p>返回FLAG</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目3 解答17.png" alt=""></p>
+<p>很久没遇见这种可以SQL注入的事情，好开心啊</p>
+]]></content>
+      <categories>
+        <category>渗透</category>
+      </categories>
+      <tags>
+        <tag>CTF</tag>
+        <tag>渗透</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>进阶题目1</title>
+    <url>/2019/12/25/%E8%BF%9B%E9%98%B6%E9%A2%98%E7%9B%AE1/</url>
+    <content><![CDATA[<h2 id="CTF进阶WEB题目"><a href="#CTF进阶WEB题目" class="headerlink" title="CTF进阶WEB题目"></a>CTF进阶WEB题目</h2><h3 id="进阶题目1"><a href="#进阶题目1" class="headerlink" title="进阶题目1"></a>进阶题目1</h3><p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目1 题目.png" alt=""></p>
+<p>有提示，说明了初始页面上回有我们想要的东西</p>
+<p>初始页面是111.198.29.45:42536</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目1 解答1.png" alt=""></p>
+<p>然后再初始页面的里面找到了FLAG</p>
+<h3 id="进阶题目2"><a href="#进阶题目2" class="headerlink" title="进阶题目2"></a>进阶题目2</h3><p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目2 题目.png" alt=""></p>
+<p>提示没有看懂，先进去看看</p>
+<p>输入一个ip，可以ping，看看是不是命令漏洞</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目2 解答1.png" alt=""></p>
+<p>发现不是命令漏洞，因为输入127.0.0.1|ls /home 返回了一个</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目2 解答2.png" alt=""></p>
+<p>去网上看看了大神的writeup，发现是考察的是url编码和django的知识。</p>
+<p>对于Django没有想法。</p>
+<p>在url里传参<code>%80</code>报错（URL编码是0~127，80的十六进制是128自然报错），从报错信息的目录结构可以知道这个是Django的项目。</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目2 解答3.png" alt=""></p>
+<p>根据Django的目录特性，用@进行文件传递，对文件进行读取之后将内容传给url参数，如果有错误信息就可以得到回显，进而取得更多错误信息、帮助我们拿到flag。</p>
+<p>先看看settings.py：</p>
+<p>payload: <code>?url=@/opt/api/api/settings.py</code></p>
+<p>找到数据库文件的存放位置：</p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目2 解答4.png" alt=""></p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目2 解答5.png" alt=""></p>
+<p>看看这个文件：</p>
+<p>payload： <code>?url=@/opt/api/database.sqlite3</code></p>
+<p><img src="http://q20wi1s2d.bkt.clouddn.com/进阶题目2 解答6.png" alt=""></p>
+]]></content>
+      <categories>
+        <category>渗透</category>
+      </categories>
+      <tags>
+        <tag>CTF</tag>
+        <tag>渗透</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>CTF初级WEB</title>
-    <url>/2019/12/25/CTF%E5%88%9D%E7%BA%A7WEB/</url>
+    <url>/2019/12/24/CTF%E5%88%9D%E7%BA%A7WEB/</url>
     <content><![CDATA[<h2 id="CTF初级WEB"><a href="#CTF初级WEB" class="headerlink" title="CTF初级WEB"></a>CTF初级WEB</h2><h3 id="第一题"><a href="#第一题" class="headerlink" title="第一题"></a>第一题</h3><p>题目</p>
 <p><img src="http://q20wi1s2d.bkt.clouddn.com/题目1 题目.png" alt=""></p>
 <p>然后F12 查看源码就好了</p>
